@@ -15,6 +15,12 @@ public class Player implements Serializable
 {
     private String name;
     private double bestScore;
+    private Player player;
+    
+    public Game() 
+    {
+       
+    }
 
     public Player(String name, double bestScore) {
         this.name = name;
