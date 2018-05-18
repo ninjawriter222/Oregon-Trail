@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dungeon.crawler.model;
+package OrgeonTrail.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,8 +22,7 @@ public class Game implements Serializable
     
     }
 
-    public Player getPlayer()
-    {
+    public Player getPlayer() {
         return player;
     }
 
@@ -31,4 +30,5 @@ public class Game implements Serializable
         this.player = player;
     }
 
+    
 }

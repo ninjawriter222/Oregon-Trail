@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dungeon.crawler.model;
+package OrgeonTrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -15,13 +16,21 @@ public class Player implements Serializable
 {
     private String name;
     private double bestScore;
-    private Player player;
+    private ArrayList<Game> games = new ArrayList<Game>();
     
-    public Game() 
+    public Player() 
     {
        
     }
 
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
+    
     public Player(String name, double bestScore) {
         this.name = name;
         this.bestScore = bestScore;
