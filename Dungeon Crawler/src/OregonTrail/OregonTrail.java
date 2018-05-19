@@ -6,6 +6,8 @@
 package OregonTrail;
 
 import OrgeonTrail.model.Actor;
+import OrgeonTrail.model.Location;
+import OrgeonTrail.model.Map;
 import OrgeonTrail.model.Player;
 
 /**
@@ -32,7 +34,28 @@ public class OregonTrail {
     
         Actor.Bob.getName();
         Actor.Bob.getDescription();
-    
+        
+        
+        /*
+        static void hansTest();
+        
+        Location findLocation = new Location();
+        
+        findLocation.setVisited(Boolean.TRUE);
+        findLocation.setRow(Short.MIN_VALUE);
+        findLocation.setColumn(Short.MIN_VALUE);
+        
+        Boolean findLocationVisited = findLocation.getVisited();
+        Short findLocationRow = findLocation.getRow();
+        Short findLocationColumn = findLocation.getColumn();
+        
+        System.outprintln(findLocation.toString());
+        */
+//        
+//        Map.AshHollow.getName();
+//        Map.AshHollow.getDescription();
+//        Map.AshHollow.getCoordinates();
+        
     }
     
 }

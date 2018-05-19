@@ -16,6 +16,7 @@ public class Game implements Serializable
     private double totalMoves;
     private Player player;
     private ArrayList<Game> games = new ArrayList<Game>();
+    private Map map;
     
     public Game() 
     {
@@ -30,5 +31,14 @@ public class Game implements Serializable
         this.player = player;
     }
 
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    
     
 }
