@@ -41,9 +41,9 @@ public class OregonTrail {
         
         Location findLocation = new Location();
         
-        findLocation.setVisited(Boolean.TRUE);
-        findLocation.setRow(Short.MIN_VALUE);
-        findLocation.setColumn(Short.MIN_VALUE);
+        findLocation.setVisited(TRUE);
+        findLocation.setRow(2);
+        findLocation.setColumn(3);
         
         Boolean findLocationVisited = findLocation.getVisited();
         Short findLocationRow = findLocation.getRow();
