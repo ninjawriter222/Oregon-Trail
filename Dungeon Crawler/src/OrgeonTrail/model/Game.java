@@ -17,6 +17,7 @@ public class Game implements Serializable
     private Player player;
     private ArrayList<Game> games = new ArrayList<Game>();
     private Map map;
+    private Scene scene;
     
     public Game() 
     {

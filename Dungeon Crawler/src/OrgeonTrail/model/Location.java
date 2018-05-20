@@ -15,8 +15,8 @@ import java.util.Objects;
 public class Location implements Serializable {
     
     private Boolean visited;
-    private Short row;
-    private Short column;
+    private int row;
+    private int column;
 
     public Location() {
     }
@@ -31,19 +31,19 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public Short getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(Short row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public Short getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(Short column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
