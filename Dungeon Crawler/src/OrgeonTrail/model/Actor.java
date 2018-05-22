@@ -17,9 +17,9 @@ public enum Actor
     Bob("Bob", "He is Bob.", new Point(1,1)),
     Shnob("Snob", "He is a Snobb", new Point(2,2));
     
-    private String name;
-    private String description;
-    private Point coordinates;
+    private final String name;
+    private final String description;
+    private final Point coordinates;
 
     Actor(String name, String description, Point coordinates)
         {
@@ -40,12 +40,12 @@ public enum Actor
         return coordinates;
     }
 
+    
+    
     @Override
     public String toString() {
         return "Actor{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
     }
 
-    
-    
 }
 

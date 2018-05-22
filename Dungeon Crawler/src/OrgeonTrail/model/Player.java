@@ -51,7 +51,7 @@ public class Player implements Serializable
     public void setBestScore(double bestScore) {
         this.bestScore = bestScore;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 3;

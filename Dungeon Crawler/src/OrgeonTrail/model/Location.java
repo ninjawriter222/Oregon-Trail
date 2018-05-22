@@ -17,6 +17,7 @@ public class Location implements Serializable {
     private Boolean visited;
     private int row;
     private int column;
+    private Scene scene;
 
     public Location() {
     }
@@ -47,21 +48,28 @@ public class Location implements Serializable {
         this.column = column;
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.visited);
-        hash = 53 * hash + Objects.hashCode(this.row);
-        hash = 53 * hash + Objects.hashCode(this.column);
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.visited);
+        hash = 23 * hash + this.row;
+        hash = 23 * hash + this.column;
+        hash = 23 * hash + Objects.hashCode(this.scene);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "visited=" + visited + ", row=" + row + ", column=" + column + '}';
+        return "Location{" + "visited=" + visited + ", row=" + row + ", column=" + column + ", scene=" + scene + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -75,13 +83,16 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
+        if (this.row != other.row) {
+            return false;
+        }
+        if (this.column != other.column) {
+            return false;
+        }
         if (!Objects.equals(this.visited, other.visited)) {
             return false;
         }
-        if (!Objects.equals(this.row, other.row)) {
-            return false;
-        }
-        if (!Objects.equals(this.column, other.column)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         return true;
