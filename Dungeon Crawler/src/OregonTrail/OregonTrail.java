@@ -8,10 +8,10 @@ package OregonTrail;
 import OrgeonTrail.model.Actor;
 import OrgeonTrail.model.Location;
 import OrgeonTrail.model.Map;
+import OrgeonTrail.model.Obstacle;
 import OrgeonTrail.model.Player;
 import OrgeonTrail.model.Scene;
 import static java.lang.Boolean.TRUE;
-import java.util.HashSet;
 
 
 /**
@@ -34,8 +34,33 @@ public class OregonTrail
        // Short findLocationColumn = findLocation.getColumn();
         
     System.out.println(findLocation.toString());
+    
     }
-
+    
+    static void HansTest2()
+    {
+        Map getMap = new Map();
+        
+        getMap.getCurrentColumn(2);
+        getMap.getCurrentRow(3);
+        getMap.getTotalColumns(5);
+        getMap.getTotalRows(5);
+        
+        System.out.println(getMap.toString());
+    }
+    
+    static void HansTest3(){
+          Obstacle testObstacle = new Obstacle();
+    
+        testObstacle.getName("A bear");
+        testObstacle.getDescription("A really rough one.");
+        testObstacle.getType("Hard");
+        testObstacle.getHealthValue(200);
+        testObstacle.getStaminaValue(100);
+    
+        System.out.println(testObstacle.toString());
+    }
+    
     static void TeamTest()
     {
     Player playerOne = new Player();
@@ -81,5 +106,6 @@ public class OregonTrail
         HansTest();
         TeamTest();
         DevinsTest();
+        
     }
 }
