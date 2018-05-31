@@ -9,6 +9,7 @@ package OregonTrail.control;
  *
  * @author MasterCraft Computer
  */
-public class Health {
-    
+public class Health 
+{
+//save for Vega to work on    
 }
