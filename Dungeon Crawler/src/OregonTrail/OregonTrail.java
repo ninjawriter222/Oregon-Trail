@@ -29,7 +29,7 @@ public class OregonTrail
     findLocation.setRow(2);
     findLocation.setColumn(3);
         
-        //Boolean findLocationVisited = findLocation.getVisited();
+       //Boolean findLocationVisited = findLocation.getVisited();
        // Short findLocationRow = findLocation.getRow();
        // Short findLocationColumn = findLocation.getColumn();
         
