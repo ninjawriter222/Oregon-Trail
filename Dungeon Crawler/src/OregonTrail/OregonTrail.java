@@ -11,7 +11,10 @@ import OrgeonTrail.model.Map;
 import OrgeonTrail.model.Obstacle;
 import OrgeonTrail.model.Player;
 import OrgeonTrail.model.Scene;
+import OrgeonTrail.model.Speed;
+import OregonTrail.control.PurchaseSupplies;
 import static java.lang.Boolean.TRUE;
+import java.util.Scanner;
 
 
 /**
@@ -107,5 +110,21 @@ public class OregonTrail
         TeamTest();
         DevinsTest();
         
+        System.out.println("What is your players name?");
+        Scanner nameInput = new Scanner(System.in);
+        String name = nameInput.next();
+        
+        System.out.println("What is your speed?");
+        Scanner speedInput = new Scanner(System.in);
+        String speed = speedInput.next();
+        
+        //System.out.println();
+        
+        Speed.setSpeed(speed);
+        System.out.println();
+        
+        System.out.println("What is your profession?");
+        Scanner professionInput = new Scanner(System.in);
+        String profession = professionInput.next();
     }
 }
