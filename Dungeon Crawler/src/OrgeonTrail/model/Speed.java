@@ -13,32 +13,66 @@ import java.io.Serializable;
  */
 public class Speed implements Serializable
 {
+private String speed;
 double slow = 1;
 double normal = 2;
 double fast = 3;
 
-    public double getSlow() {
-        return slow;
+    public String setSpeed(String speed) 
+    {
+    if (speed == "slow")
+        {
+        this.speed = slow;
+        return speed;
+        }
+    if (speed == "normal")
+        {
+        this.speed = speed;
+        }
+    if (speed == "fast")
+        {
+        this.setFast(3);
+        }
+    else
+        {
+        System.out.println("Please enter a valid speed");
+        }
+    }
+    
+
+
+    public double getSpeed(double speed) 
+    {
+    return speed;
     }
 
+    public void setSpeed(double speed) 
+    {
+        
+    }
+
+    public double getSlow() {
+        return 1;
+}
+
     public void setSlow(double slow) {
-        this.slow = slow;
+        this.slow = 1;
     }
 
     public double getNormal() {
-        return normal;
+        return 2;
     }
 
     public void setNormal(double normal) {
-        this.normal = normal;
+        this.normal = 2;
     }
 
     public double getFast() {
-        return fast;
+        return 3;
     }
 
     public void setFast(double fast) {
-        this.fast = fast;
+        this.fast = 3;
     }
 
 
