@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package OregonTrail.control;
+
+import OrgeonTrail.model.Speed;
+
 /*import OregonTrail.model.Speed;*/
 /**
  *
@@ -32,12 +35,11 @@ public class Location
     }
 
     
-    public static double changeLocation(double getRow, double getColumn, double Speed)
+    public static double changeLocation(Speed speed, double getRow, double getColumn, double Speed)
     {
     double row = getRow;
     double column = getColumn;
-    double speed = Speed;
-    
+    speed.getSpeed = speed;
     double newRow = row + speed;
     
     if(newRow > 4)
