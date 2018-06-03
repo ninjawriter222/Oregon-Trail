@@ -35,11 +35,10 @@ public class Location
     }
 
     
-    public static double changeLocation(Speed speed, double getRow, double getColumn, double Speed)
+    public static double changeLocation(double getRow, double getColumn, double speed)
     {
     double row = getRow;
     double column = getColumn;
-    speed.getSpeed = speed;
     double newRow = row + speed;
     
     if(newRow > 4)
@@ -48,9 +47,7 @@ public class Location
         column =+ 1;
         return column;
         }
-    
     else
-    
         {
         return newRow;
         }

@@ -5,7 +5,6 @@
  */
 package OregonTrail.control;
 
-import OrgeonTrail.model.Speed;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -22,28 +21,44 @@ public class LocationTest {
      * Test of checkLocation method, of class Location.
      */
     @Test
-    public void testCheckLocation() {
+    public void testCheckLocation0() {
         System.out.println("checkLocation");
-        double getRow = 0.0;
-        double getColumn = 0.0;
-        double expResult = 0.0;
+        double getRow = -1;
+        double getColumn = 1;
+        double expResult = -1;
         double result = Location.checkLocation(getRow, getColumn);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 0.0001);
     }
-
+    @Test
+    public void testCheckLocation1() {
+        System.out.println("checkLocation");
+        double getRow = 1;
+        double getColumn = -1;
+        double expResult = -1;
+        double result = Location.checkLocation(getRow, getColumn);
+        assertEquals(expResult, result, 0.0001);
+    }
+    @Test
+    public void testCheckLocation2() {
+        System.out.println("checkLocation");
+        double getRow = 1;
+        double getColumn = 1;
+        double expResult = 1;
+        double result = Location.checkLocation(getRow, getColumn);
+        assertEquals(expResult, result, 0.0001);
+    }
     /**
      * Test of changeLocation method, of class Location.
      */
     @Test
-    public void testChangeLocation() {
+    public void testChangeLocation0() {
         System.out.println("changeLocation");
-        Speed speed = null;
-        double getRow = 0.0;
-        double getColumn = 0.0;
-        double Speed = 0.0;
-        double expResult = 0.0;
-        double result = Location.changeLocation(speed, getRow, getColumn, Speed);
-        assertEquals(expResult, result, 0.0);
+        double getRow = 1;
+        double getColumn = 1;
+        double speed = 1;
+        double expResult = 2;
+        double result = Location.changeLocation(getRow, getColumn, speed);
+        assertEquals(expResult, result, 0.0001);
     }
     
 }

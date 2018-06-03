@@ -35,9 +35,9 @@ else
 return 0;
 }
 
-public double getSpeed(double setSpeed) 
+public double getSpeed(double speed) 
 {
-return setSpeed;
+return speed;
 }
 
 }

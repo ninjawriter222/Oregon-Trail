@@ -11,7 +11,7 @@ package OrgeonTrail.model;
  */
 class Point {
 
-    Point(int i, int i0) {
+    Point(int 5, int 5) static {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
