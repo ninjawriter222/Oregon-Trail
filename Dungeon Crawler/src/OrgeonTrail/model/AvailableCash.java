@@ -11,7 +11,31 @@ package OrgeonTrail.model;
  */
 public class AvailableCash 
 {
-double accountant = 2000;
-double lawer = 1500;
-double farmer = 1000;
+
+public double setProfession(String profession) 
+{
+if ("farmer".equals(profession))
+    {
+    return 1000;
+    }
+if ("accountant".equals(profession))
+    {
+    return 1500;
+    }
+if ("lawer".equals(profession))
+    {
+    return 2000;
+    }
+else
+    {
+    System.out.println("Please enter a valid profession");
+    }
+return 0;
+}
+
+public double getAvailableCash(double AvailableCash) 
+{
+return AvailableCash;
+}
+
 }

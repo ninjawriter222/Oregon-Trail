@@ -5,14 +5,15 @@
  */
 package OrgeonTrail.model;
 
-/**
- *
- * @author hansm
- */
-class Point {
+import java.io.Serializable;
 
-    Point(int 5, int 5) static {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+public class Point implements Serializable 
+{
+
+Point(double x, double y)
+{
+x = 0;
+y = 0;
+}
     
 }

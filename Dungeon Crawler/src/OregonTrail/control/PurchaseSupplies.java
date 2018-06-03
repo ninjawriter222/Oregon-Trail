@@ -5,8 +5,6 @@
  */
 package OregonTrail.control;
 
-
-import static OregonTrail.control.PurchaseSupplies.purchase;
 import OrgeonTrail.model.AvailableCash;
 /**
  *
@@ -14,15 +12,16 @@ import OrgeonTrail.model.AvailableCash;
  */
 public class PurchaseSupplies 
 {
-double AvailableCash;
 double itemAmmount;
 double cost;
-double total = 0;
+double total;
 double remaingCash;
 
-public void setCash (double AvaliableCash) 
+public double CurrentCash(double getAvailableCash) 
     {
-    this.setCash(AvaliableCash);
+    double AvailableCash = getAvailableCash;
+   
+    return AvailableCash;
     }   
 
 public static double purchase(double itemAmmount, double cost)
@@ -38,19 +37,17 @@ public static double purchase(double itemAmmount, double cost)
 
 public static double calculateRemainingCash()
     {
-    double remainingCash = (AvailableCash - purchase);
+    double remainingCash = (CurrentCash - purchase);
     if (remainingCash < 0 || remainingCash > 2000)
         {
         return -1;
         }
     else
         {
-        return RemainingCash;
+        return remainingCash;
         }
     }
  
-
-
 //why is it that I need to define the variable when I return the variable of
 //purchase just before this function?
 
