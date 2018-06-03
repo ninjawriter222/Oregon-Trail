@@ -5,6 +5,7 @@
  */
 package OregonTrail.control;
 
+import OrgeonTrail.model.Speed;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -23,26 +24,11 @@ public class LocationTest {
     @Test
     public void testCheckLocation() {
         System.out.println("checkLocation");
-        double getRow = 1;
-        double getColumn = 5;
-        double expResult = 1.0;
+        double getRow = 0.0;
+        double getColumn = 0.0;
+        double expResult = 0.0;
         double result = Location.checkLocation(getRow, getColumn);
-        assertEquals(expResult, result, 0.0001);
-        
-    }
-    
-    /**
-     * Test of checkLocation method, of class Location.
-     */
-    @Test
-    public void testCheckLocation1() {
-        System.out.println("checkLocation");
-        double getRow = -5;
-        double getColumn = 0;
-        double expResult = -1;
-        double result = Location.checkLocation(getRow, getColumn);
-        assertEquals(expResult, result, 0.0001);
-        
+        assertEquals(expResult, result, 0.0);
     }
 
     /**
@@ -51,29 +37,13 @@ public class LocationTest {
     @Test
     public void testChangeLocation() {
         System.out.println("changeLocation");
-        double getRow = 5.0;
-        double getColumn = 5.0;
-        double Speed = 3.0;
-        double expResult = 1.0;
-        double result = Location.changeLocation(getRow, getColumn, Speed);
-        assertEquals(expResult, result, 0.0001);
-        
-    }
-    
-    /**
-     * Test of changeLocation method, of class Location.
-     */
-    @Test
-    public void testChangeLocation1() {
-        System.out.println("changeLocation");
-        double getRow = 5.0;
-        double getColumn = 5.0;
+        Speed speed = null;
+        double getRow = 0.0;
+        double getColumn = 0.0;
         double Speed = 0.0;
-        double expResult = 1;
-        double result = Location.changeLocation(getRow, getColumn, Speed);
-        assertEquals(expResult, result, 0.0001);
-        
+        double expResult = 0.0;
+        double result = Location.changeLocation(speed, getRow, getColumn, Speed);
+        assertEquals(expResult, result, 0.0);
     }
-    
     
 }

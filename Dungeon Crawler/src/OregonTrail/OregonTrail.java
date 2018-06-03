@@ -117,11 +117,11 @@ public class OregonTrail
         System.out.println("What is your speed?");
         Scanner speedInput = new Scanner(System.in);
         String speed = speedInput.next();
+        System.out.println(speed);
         
-        //System.out.println();
-        
-        Speed.setSpeed(speed);
-        System.out.println();
+        Speed instance = new Speed();
+        double getSpeed = instance.setSpeed(speed);
+        System.out.println("Your current speed is " + instance.getSpeed(getSpeed));
         
         System.out.println("What is your profession?");
         Scanner professionInput = new Scanner(System.in);
