@@ -17,10 +17,28 @@ public class Player implements Serializable
     private String name;
     private double bestScore;
     private ArrayList<Game> games = new ArrayList<Game>();
-    
+    private double currentCash;
     public Player() 
     {
        
+    }
+
+    /**
+     * Get the value of currentCash
+     *
+     * @return the value of currentCash
+     */
+    public double getCurrentCash() {
+        return currentCash;
+    }
+
+    /**
+     * Set the value of currentCash
+     *
+     * @param currentCash new value of currentCash
+     */
+    public void setCurrentCash(double currentCash) {
+        this.currentCash = currentCash;
     }
 
     public ArrayList<Game> getGames() {

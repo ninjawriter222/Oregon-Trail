@@ -5,6 +5,8 @@
  */
 package OregonTrail.control;
 
+import OrgeonTrail.model.Inventory;
+import OrgeonTrail.model.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,38 +20,72 @@ public class PurchaseSuppliesTest {
      */
     @Test
     public void testPurchase0() {
-        System.out.println("purchase");
+        System.out.println("purchase 1");
         double itemAmmount = 0.0;
         double cost = 0.0;
         double expResult = 0.0;
         double result = PurchaseSupplies.purchase(itemAmmount, cost);
         assertEquals(expResult, result, 0.0001);
-    }
-    @Test
-    public void testPurchase1() {
-        System.out.println("purchase");
-        double itemAmmount = 10;
-        double cost = 10;
-        double expResult = 100;
-        double result = PurchaseSupplies.purchase(itemAmmount, cost);
+    
+        System.out.println("purchase 2");
+        itemAmmount = 10;
+        cost = 10;
+        expResult = 100;
+        result = PurchaseSupplies.purchase(itemAmmount, cost);
+        assertEquals(expResult, result, 0.0001);
+   
+        System.out.println("purchase 3");
+        itemAmmount = 100;
+        cost = 1;
+        expResult = -1;
+        result = PurchaseSupplies.purchase(itemAmmount, cost);
+        assertEquals(expResult, result, 0.0001);
+    
+        System.out.println("purchase 4");
+        itemAmmount = -1;
+        cost = 0.0;
+        expResult = -1;
+        result = PurchaseSupplies.purchase(itemAmmount, cost);
         assertEquals(expResult, result, 0.0001);
     }
     @Test
-    public void testPurchase2() {
-        System.out.println("purchase");
-        double itemAmmount = 100;
-        double cost = 1;
-        double expResult = -1;
-        double result = PurchaseSupplies.purchase(itemAmmount, cost);
+    public void testCalculateRemainingCash() {
+        Inventory item = new Inventory();
+        Player player = new Player();
+        System.out.println("test 1");
+        item.setAmmount(1);
+        item.setCost(10);
+        player.setCurrentCash(1000);
+        double expResult = 990;
+        double result = PurchaseSupplies.calculateRemainingCash(item, player);
+        System.out.println("Result = " + result);
         assertEquals(expResult, result, 0.0001);
-    }
-    @Test
-    public void testPurchase3() {
-        System.out.println("purchase");
-        double itemAmmount = -1;
-        double cost = 0.0;
-        double expResult = -1;
-        double result = PurchaseSupplies.purchase(itemAmmount, cost);
+        
+        System.out.println("test 1");
+        item.setAmmount(1);
+        item.setCost(-10);
+        player.setCurrentCash(1000);
+        expResult = -2;
+        result = PurchaseSupplies.calculateRemainingCash(item, player);
+        System.out.println("Result = " + result);
+        assertEquals(expResult, result, 0.0001);
+        
+        System.out.println("test 1");
+        item.setAmmount(-1);
+        item.setCost(10);
+        player.setCurrentCash(1000);
+        expResult = -2;
+        result = PurchaseSupplies.calculateRemainingCash(item, player);
+        System.out.println("Result = " + result);
+        assertEquals(expResult, result, 0.0001);
+        
+        System.out.println("test 1");
+        item.setAmmount(1);
+        item.setCost(10);
+        player.setCurrentCash(-100);
+        expResult = -1;
+        result = PurchaseSupplies.calculateRemainingCash(item, player);
+        System.out.println("Result = " + result);
         assertEquals(expResult, result, 0.0001);
     }
     /**
