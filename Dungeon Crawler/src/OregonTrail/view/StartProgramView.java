@@ -27,6 +27,10 @@ public class StartProgramView {
         
         return inputs;
     }
+
+    public void setInputs(String[] inputs) {
+        this.inputs = inputs;
+    }
     
     private boolean doAction(String[] inputs){
         System.out.println("***Do action called***");
@@ -55,37 +59,36 @@ public class StartProgramView {
                 + "\n---------------------------");
     }
     
-    private String UserInput(){
+    public String UserInput(){
             Scanner keyboard = new Scanner(System.in);
-            String userInput = "";
-            userInput = keyboard.nextLine().trim().toUpperCase();
+            String userInput = keyboard.nextLine().trim().toUpperCase();
             return userInput;
     }
 
     private boolean DummyLoop() {
         boolean value = false;
-        String userInput = this.UserInput();
-        System.out.println(userInput);
+        String loopInput = this.UserInput();
+        System.out.println(loopInput);
         while(value == false){
-            if("I".equals(userInput)){
+            if("I".equals(loopInput)){
                 InventoryView instance = new InventoryView();
                 String getdisplayInventory = instance.getDisplayInvetory();
                 System.out.println(inputs[0]);
                 return true;
         }
-            if("G".equals(userInput)){
+            if("G".equals(loopInput)){
                 StartView instance = new StartView();
                 String getstartView = instance.getStartView();
                 System.out.println(inputs[1]);
                 return true;
         }
-            if("P".equals(userInput)){
+            if("P".equals(loopInput)){
                 PurchaseSuppliesView instance = new PurchaseSuppliesView();
                 String getpurchaseSuppliesView = instance.getPurchaseSuppliesView();
                 System.out.println(inputs[2]);
                 return true;
         }
-            if("Q".equals(userInput)){
+            if("Q".equals(loopInput)){
                 return false;
         }
             else return false;
