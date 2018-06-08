@@ -13,6 +13,7 @@ import OrgeonTrail.model.Player;
 import OrgeonTrail.model.Scene;
 import OrgeonTrail.model.Speed;
 import OregonTrail.control.PurchaseSupplies;
+import OregonTrail.view.StartProgramView;
 import OrgeonTrail.model.AvailableCash;
 import static java.lang.Boolean.TRUE;
 import java.util.Scanner;
@@ -105,32 +106,8 @@ public class OregonTrail
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
-    {
-        HansTest();
-        TeamTest();
-        DevinsTest();
-        
-        System.out.println("What is your players name?");
-        Scanner nameInput = new Scanner(System.in);
-        String name = nameInput.next();
-        System.out.println("Your name is " + name);
-
-        
-        System.out.println("What is your speed?");
-        Scanner speedInput = new Scanner(System.in);
-        String speed = speedInput.next();
-        
-        Speed instance = new Speed();
-        double getSpeed = instance.setSpeed(speed);
-        System.out.println("Your current speed is " + getSpeed);
-        
-        System.out.println("What is your profession?");
-        Scanner professionInput = new Scanner(System.in);
-        String profession = professionInput.next();
-        
-        AvailableCash instance1 = new AvailableCash();
-        double getProfession = instance1.setProfession(profession);
-        System.out.println("You have " + getProfession + " funds available.");
+    public static void main(String[] args) {
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
     }
 }
