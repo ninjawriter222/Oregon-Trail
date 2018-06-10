@@ -5,7 +5,7 @@
  */
 package OregonTrail.control;
 
-import OrgeonTrail.model.Speed;
+import OregonTrail.model.Speed;
 
 
 /**

@@ -5,9 +5,9 @@
  */
 package OregonTrail.control;
 
-import OrgeonTrail.model.AvailableCash;
-import OrgeonTrail.model.Inventory;
-import OrgeonTrail.model.Player;
+import OregonTrail.model.AvailableCash;
+import OregonTrail.model.Inventory;
+import OregonTrail.model.Player;
 
 /**
  *

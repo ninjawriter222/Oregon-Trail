@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package OrgeonTrail.model;
+package OregonTrail.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,40 +18,26 @@ public class Player implements Serializable
     private double bestScore;
     private ArrayList<Game> games = new ArrayList<Game>();
     private double currentCash;
+    private Player player;
     public Player() 
     {
        
     }
 
-    /**
-     * Get the value of currentCash
-     *
-     * @return the value of currentCash
-     */
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
     public double getCurrentCash() {
         return currentCash;
     }
 
-    /**
-     * Set the value of currentCash
-     *
-     * @param currentCash new value of currentCash
-     */
     public void setCurrentCash(double currentCash) {
         this.currentCash = currentCash;
-    }
-
-    public ArrayList<Game> getGames() {
-        return games;
-    }
-
-    public void setGames(ArrayList<Game> games) {
-        this.games = games;
-    }
-    
-    public Player(String name, double bestScore) {
-        this.name = name;
-        this.bestScore = bestScore;
     }
 
     public String getName() {
@@ -60,6 +46,14 @@ public class Player implements Serializable
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
     }
 
     public double getBestScore() {
@@ -101,10 +95,7 @@ public class Player implements Serializable
 
     @Override
     public String toString() {
+        
         return "Player{" + "name=" + name + ", bestScore=" + bestScore + '}';
     }
-    
-    
-    
-    
 }

@@ -1,7 +1,7 @@
-package OrgeonTrail.model;
+package OregonTrail.model;
 
 
-import OrgeonTrail.model.Location;
+import OregonTrail.model.Location;
 import java.io.Serializable;
 import java.util.Objects;
 

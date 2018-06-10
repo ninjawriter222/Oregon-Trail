@@ -5,8 +5,8 @@
  */
 package OregonTrail.control;
 
-import OrgeonTrail.model.Inventory;
-import OrgeonTrail.model.Player;
+import OregonTrail.model.Inventory;
+import OregonTrail.model.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

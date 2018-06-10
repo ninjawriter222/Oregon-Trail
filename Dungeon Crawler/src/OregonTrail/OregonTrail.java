@@ -5,109 +5,45 @@
  */
 package OregonTrail;
 
-import OrgeonTrail.model.Actor;
-import OrgeonTrail.model.Location;
-import OrgeonTrail.model.Map;
-import OrgeonTrail.model.Obstacle;
-import OrgeonTrail.model.Player;
-import OrgeonTrail.model.Scene;
-import OrgeonTrail.model.Speed;
-import OregonTrail.control.PurchaseSupplies;
+import OregonTrail.control.GameControl;
+import OregonTrail.model.Player;
 import OregonTrail.view.StartProgramView;
-import OrgeonTrail.model.AvailableCash;
-import static java.lang.Boolean.TRUE;
-import java.util.Scanner;
+import OregonTrail.model.Game;
+import OregonTrail.view.GameMenuView;
 
 
 /**
  *
  * @author MasterCraft Computer
  */
-public class OregonTrail 
-{
-    static void HansTest()
-    {
-        
-    Location findLocation = new Location();
-
-    findLocation.setVisited(TRUE);
-    findLocation.setRow(2);
-    findLocation.setColumn(3);
-        
-       //Boolean findLocationVisited = findLocation.getVisited();
-       // Short findLocationRow = findLocation.getRow();
-       // Short findLocationColumn = findLocation.getColumn();
-        
-    System.out.println(findLocation.toString());
+public class OregonTrail {
     
-    }
+    private static Player player = null;
+    private static Game currentGame = null;
     
-    static void HansTest2()
-    {
-        Map getMap = new Map();
-        
-        getMap.getCurrentColumn(2);
-        getMap.getCurrentRow(3);
-        getMap.getTotalColumns(5);
-        getMap.getTotalRows(5);
-        
-        System.out.println(getMap.toString());
-    }
-    
-    static void HansTest3(){
-          Obstacle testObstacle = new Obstacle();
-    
-        testObstacle.getName("A bear");
-        testObstacle.getDescription("A really rough one.");
-        testObstacle.getType("Hard");
-        testObstacle.getHealthValue(200);
-        testObstacle.getStaminaValue(100);
-    
-        System.out.println(testObstacle.toString());
-    }
-    
-    static void TeamTest()
-    {
-    Player playerOne = new Player();
-        
-    playerOne.setName("Fred Flinstone");
-    playerOne.setBestScore(7.00);
-        
-        //String playerOneName = playerOne.getName();
-        //double playerOneScore = playerOne.getBestScore();
-        
-        //System.out.println("Name = " + playerOneName +", time =" + playerOneScore);
-    
-    System.out.println(playerOne.toString());
-    
-    Actor.Bob.getName();
-    Actor.Bob.getDescription();
-    }
-    
-    static void DevinsTest()
-    {
-    //      Devin's Test
-    Scene sceneChecker = new Scene();
-    sceneChecker.setName("numbah whan");
-    sceneChecker.setObstacle("Big Rock");
-    sceneChecker.setTerrain("Wild Amazon Jungle");
-    sceneChecker.setWeather("It's raining Men!  Halelula!");
-    sceneChecker.setSymbol("Tarus");
-    sceneChecker.setDifficulty(10);
-    sceneChecker.setSpeedValue(3);
-    sceneChecker.setSceneRef("Index");
-    sceneChecker.setAttribute("Faith");
-    sceneChecker.setLocRef("Glossary");
-    sceneChecker.setDescription("Blah Blah Blah");
-    sceneChecker.setResourceAvail("Gold!");
-    System.out.println(sceneChecker.toString());
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
+        
+        GameControl.createNewGame(getPlayer());
+        GameMenuView gameMenuView = new GameMenuView();
+        
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        OregonTrail.player = player;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        OregonTrail.currentGame = currentGame;
     }
 }
