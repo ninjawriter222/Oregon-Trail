@@ -9,7 +9,7 @@ package OregonTrail.view;
  *
  * @author MasterCraft Computer
  */
-class PurchaseSuppliesView {
+public class PurchaseSuppliesView {
     private String purchaseSuppliesView;
 
     public String getPurchaseSuppliesView() {

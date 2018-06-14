@@ -77,17 +77,16 @@ class MainMenuView {
             case "E":
                 return true;
             default:
-                System.out.println("ERROR: Invalid selection, Please try again");
+                System.out.println("ERROR: Invalid selection. Please try again");
         }
         return false;
     }
 
     private void startNewGame() {
-        System.out.println("***Calls the startNewGame method in MMV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displaygGameMenuView();
+        gameMenuView.displayGameMenuView();
         
     }
 
@@ -100,6 +99,6 @@ class MainMenuView {
 
     private void getHelp() {
         HelpMenuView instance = new HelpMenuView();
-        instance.displaygHelpMenuView();
+        instance.displayHelpMenuView();
     }
 }

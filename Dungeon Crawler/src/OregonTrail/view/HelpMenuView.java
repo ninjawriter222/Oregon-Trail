@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class HelpMenuView {
 
-    public void displaygHelpMenuView() {
+    public void displayHelpMenuView() {
         boolean endOfView = false;
         String[] inputs = null;
         do {
@@ -41,6 +41,7 @@ public class HelpMenuView {
                 + "\nM - Press M to see how to move."
                 + "\nE - Press E to see an estimate of how many resources you "
                 + "might need"
+                + "\nR - Press R to learn how to use your resources."
                 + "\nQ - Press Q to Quit"
                 + "\n"
                 + "\n---------------------------");
