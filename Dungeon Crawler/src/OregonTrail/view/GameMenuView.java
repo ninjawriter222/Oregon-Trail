@@ -170,6 +170,14 @@ public class GameMenuView {
         repWagView.displayRepairWagonView();
     }
     
+    private void useTools() {
+        System.out.println("***Calls the useTools method in UseToolsV***");
+        GameControl.createNewGame(OregonTrail.getPlayer());
+        
+        UseToolsView useToolsView = new UseToolsView();
+        useToolsView.displayUseToolsView();
+    }
+    
     private void getHelp() {
         HelpMenuView instance = new HelpMenuView();
         instance.displayHelpMenuView();
