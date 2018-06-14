@@ -19,5 +19,9 @@ public class PurchaseSuppliesView {
     public void setPurchaseSuppliesView(String purchaseSuppliesView) {
         this.purchaseSuppliesView = purchaseSuppliesView;
     }
+
+    void displayPurchaseSuppliesView() {
+        System.out.println("Calls displayPurchaseSuppliesView in PSV");
+    }
     
 }
