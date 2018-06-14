@@ -155,7 +155,7 @@ public class GameMenuView {
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         MoveView moveView = new MoveView();
-        moveView.displayMoveView();
+        moveView.display();
     }
     
     private void estimateRes() {
