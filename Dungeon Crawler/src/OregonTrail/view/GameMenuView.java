@@ -15,7 +15,6 @@ import java.util.Scanner;
  */
 public class GameMenuView {
     public void displayGameMenuView(){
-        
     }
     
     void display() {
@@ -30,7 +29,7 @@ public class GameMenuView {
             }
         } while (!endView);
     }
-
+    
     private String[] getInputs() {
         String[] inputs = new String[1];
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -220,3 +219,5 @@ public class GameMenuView {
         instance.displayHelpMenuView();
     }
 }
+
+
