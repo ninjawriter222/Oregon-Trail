@@ -20,4 +20,8 @@ public class InventoryView {
     public void setDisplayInvetory(String displayInvetory) {
         this.displayInvetory = displayInvetory;
     }
+
+    void displayInventoryView() {
+        System.out.println("Calls displayInventoryView in IV");
+    }
 }
