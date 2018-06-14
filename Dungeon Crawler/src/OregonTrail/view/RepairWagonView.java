@@ -10,5 +10,9 @@ package OregonTrail.view;
  * @author hansm
  */
 public class RepairWagonView {
+
+    void displayRepairWagonView() {
+        System.out.println("Calls displayRepairWagonView in RWV");
+    }
     
 }
