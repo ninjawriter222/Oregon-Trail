@@ -11,6 +11,6 @@ package OregonTrail.view;
  */
 public class MapView {
     public void displayMapView() {
-        System.out.println("Calls displayMapView in GMV");
+        System.out.println("Calls displayMapView in MapV");
     }
 }
