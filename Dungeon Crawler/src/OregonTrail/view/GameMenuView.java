@@ -81,29 +81,34 @@ public class GameMenuView {
                 return false;
             case "P":
                 purchaseSupplies();
+                return false;
             case "L":
                 exploreLoc();
-                return true;
+                return false;
             case "M":
                 move();
                 return false;
             case "E":
                 estimateRes();
+                return false;
             case "B":
                 repairWagon();
                 return false;
             case "C":
                 useTools();
+                return false;
             case "D":
                 fixSickness();
                 return false;
             case "N":
                 navigate();
+                return false;
             case "G":
                 huntRes();
                 return false;
             case "S":
                 saveGame();
+                return false;
             case "H":
                 getHelp();
             case "Q":
@@ -131,7 +136,7 @@ public class GameMenuView {
     }
     
     private void purchaseSupplies() {
-        System.out.println("***Calls the purchaseSupplies method in PurchSupV***");
+        System.out.println("***Calls the purchaseSupplies method in PSV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         PurchaseSuppliesView purchaseView = new PurchaseSuppliesView();
@@ -139,7 +144,7 @@ public class GameMenuView {
     }
     
     private void exploreLoc() {
-        System.out.println("***Calls the exploreLoc method in ExploreLocView***");
+        System.out.println("***Calls the exploreLoc method in ELV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         ExploreLocationView exploreLoc = new ExploreLocationView();
@@ -147,15 +152,15 @@ public class GameMenuView {
     }
     
     private void move() {
-        System.out.println("***Calls the move method in ?????***");
+        System.out.println("***Calls the move method in MoveView***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
-        __________View moveView = new __________View();
-        moveView.display__________View();
+        MoveView moveView = new MoveView();
+        moveView.displayMoveView();
     }
     
     private void estimateRes() {
-        System.out.println("***Calls the estimateRes method in EstResV***");
+        System.out.println("***Calls the estimateRes method in ERV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         EstimateResourcesView estResView = new EstimateResourcesView();
@@ -163,7 +168,7 @@ public class GameMenuView {
     }
     
     private void repairWagon() {
-        System.out.println("***Calls the repairWagon method in RepWagV***");
+        System.out.println("***Calls the repairWagon method in RWV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         RepairWagonView repWagView = new RepairWagonView();
@@ -171,11 +176,43 @@ public class GameMenuView {
     }
     
     private void useTools() {
-        System.out.println("***Calls the useTools method in UseToolsV***");
+        System.out.println("***Calls the useTools method in UTV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         UseToolsView useToolsView = new UseToolsView();
         useToolsView.displayUseToolsView();
+    }
+    
+    private void fixSickness() {
+        System.out.println("***Calls the fixSickness method in FSV***");
+        GameControl.createNewGame(OregonTrail.getPlayer());
+        
+        FixSicknessView fixSickView = new FixSicknessView();
+        fixSickView.displayFixSicknessView();
+    }
+    
+    private void navigate() {
+        System.out.println("***Calls the navigate method in NV***");
+        GameControl.createNewGame(OregonTrail.getPlayer());
+        
+        NavigateView nav = new NavigateView();
+        nav.displayNavigateView();
+    }
+    
+    private void huntRes() {
+        System.out.println("***Calls the huntRes method in HRV***");
+        GameControl.createNewGame(OregonTrail.getPlayer());
+        
+        HuntResourcesView huntResView = new HuntResourcesView();
+        huntResView.displayHuntResourcesView();
+    }
+    
+    private void saveGame() {
+        System.out.println("***Calls the saveGame method in SGV***");
+        GameControl.createNewGame(OregonTrail.getPlayer());
+        
+        SaveGameView saveView = new SaveGameView();
+        saveView.displaySaveGameView();
     }
     
     private void getHelp() {
