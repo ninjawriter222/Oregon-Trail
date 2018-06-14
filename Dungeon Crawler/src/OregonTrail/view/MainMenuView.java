@@ -37,7 +37,7 @@ class MainMenuView {
     private String[] getInputs() {
         String[] inputs = new String[1];
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++"
-                + "\n+             This is the main Menu               +"
+                + "\n+             This is the Main Menu               +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\nType the letter corresponding"
                 + "\nto the option/action you want"
