@@ -10,5 +10,9 @@ package OregonTrail.view;
  * @author hansm
  */
 public class UseToolsView {
+
+    void displayUseToolsView() {
+        System.out.println("Calls displayUseToolsView in UTV");
+    }
     
 }
