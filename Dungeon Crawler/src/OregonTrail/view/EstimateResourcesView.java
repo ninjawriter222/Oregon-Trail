@@ -10,5 +10,9 @@ package OregonTrail.view;
  * @author hansm
  */
 public class EstimateResourcesView {
+
+    void displayEstimateResourcesView() {
+        System.out.println("Calls displayEstimateResources in ERV");
+    }
     
 }
