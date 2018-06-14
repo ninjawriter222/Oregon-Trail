@@ -10,5 +10,8 @@ package OregonTrail.view;
  * @author hansm
  */
 public class ExploreLocationView {
-    
+
+    void displayExploreLocationView() {
+        System.out.println("Calls displayExploreLocationView in ELV");
+    }  
 }
