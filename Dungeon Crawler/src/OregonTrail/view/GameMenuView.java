@@ -110,6 +110,7 @@ public class GameMenuView {
                 return false;
             case "H":
                 getHelp();
+                return false;
             case "Q":
                 return true;
             default:
