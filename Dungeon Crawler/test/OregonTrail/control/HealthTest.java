@@ -5,6 +5,7 @@
  */
 package OregonTrail.control;
 
+import OregonTrail.model.Player;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,7 +44,7 @@ public class HealthTest {
         System.out.println("checkSpeed 1");
         double getSpeed = 0;
         double expResult = -1;
-        double result = Health.checkSpeed(getSpeed);
+        double result = PlayerHealth.checkSpeed(getSpeed);
         assertEquals(expResult, result, 0.000001);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -52,7 +53,7 @@ public class HealthTest {
         System.out.println("checkSpeed 2");
         double getSpeed = 4;
         double expResult = -1;
-        double result = Health.checkSpeed(getSpeed);
+        double result = PlayerHealth.checkSpeed(getSpeed);
         assertEquals(expResult, result, 0.000001);
     }
      @Test
@@ -60,14 +61,14 @@ public class HealthTest {
         System.out.println("checkSpeed 3");
         double getSpeed = 3;
         double expResult = 15;
-        double result = Health.checkSpeed(getSpeed);
+        double result = PlayerHealth.checkSpeed(getSpeed);
         assertEquals(expResult, result, 0.000001);
     }@Test
     public void testCheckSpeed4() {
         System.out.println("checkSpeed 4");
         double getSpeed = 1;
         double expResult = 5;
-        double result = Health.checkSpeed(getSpeed);
+        double result = PlayerHealth.checkSpeed(getSpeed);
         assertEquals(expResult, result, 0.000001);
     }   // TODO review the generated test code and remove the default call to fail.
     /**
@@ -78,7 +79,7 @@ public class HealthTest {
         System.out.println("checkRest");
         boolean rest = false;
         double expResult = 0.0;
-        double result = Health.checkRest(rest);
+        double result = PlayerHealth.checkRest(rest);
         assertEquals(expResult, result, 0.00001);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -87,22 +88,8 @@ public class HealthTest {
         System.out.println("checkRest 2");
         boolean rest = true;
         double expResult = 20;
-        double result = Health.checkRest(rest);
+        double result = PlayerHealth.checkRest(rest);
         assertEquals(expResult, result, 0.00001);
-        // TODO review the generated test code and remove the default call to fail.
-    }
-
-    /**
-     * Test of changeHealth method, of class Health.
-     */
-    @Test
-    public void testChangeHealth() {
-        System.out.println("changeHealth");
-        double speed = 0.0;
-        int rest = 0;
-        double expResult = 0.0;
-        double result = Health.changeHealth(speed, rest);
-        assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
     }
     

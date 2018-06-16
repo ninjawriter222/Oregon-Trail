@@ -7,6 +7,7 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
+import OregonTrail.control.PlayerHealth;
 import OregonTrail.model.Player;
 import java.util.Scanner;
 
@@ -84,7 +85,8 @@ class MainMenuView {
 
     private void startNewGame() {
         GameControl.createNewGame(OregonTrail.getPlayer());
-        
+        Player instance = new Player();
+            instance.setHealth(100);
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
         

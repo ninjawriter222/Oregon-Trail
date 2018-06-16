@@ -18,7 +18,7 @@ public class LocationTest {
     }
 
     /**
-     * Test of checkLocation method, of class Location.
+     * Test of checkLocation method, of class LocationControl.
      */
     @Test
     public void testCheckLocation0() {
@@ -26,7 +26,7 @@ public class LocationTest {
         double getRow = -1;
         double getColumn = 1;
         double expResult = -1;
-        double result = Location.checkLocation(getRow, getColumn);
+        double result = LocationControl.checkLocation(getRow, getColumn);
         assertEquals(expResult, result, 0.0001);
     }
     @Test
@@ -35,7 +35,7 @@ public class LocationTest {
         double getRow = 1;
         double getColumn = -1;
         double expResult = -1;
-        double result = Location.checkLocation(getRow, getColumn);
+        double result = LocationControl.checkLocation(getRow, getColumn);
         assertEquals(expResult, result, 0.0001);
     }
     @Test
@@ -44,11 +44,11 @@ public class LocationTest {
         double getRow = 1;
         double getColumn = 1;
         double expResult = 1;
-        double result = Location.checkLocation(getRow, getColumn);
+        double result = LocationControl.checkLocation(getRow, getColumn);
         assertEquals(expResult, result, 0.0001);
     }
     /**
-     * Test of changeLocation method, of class Location.
+     * Test of changeLocation method, of class LocationControl.
      */
     @Test
     public void testChangeLocation0() {
@@ -57,7 +57,7 @@ public class LocationTest {
         double getColumn = 1;
         double speed = 1;
         double expResult = 2;
-        double result = Location.changeLocation(getRow, getColumn, speed);
+        double result = LocationControl.changeLocation(getRow, getColumn, speed);
         assertEquals(expResult, result, 0.0001);
     }
     

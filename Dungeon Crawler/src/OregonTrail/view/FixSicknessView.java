@@ -5,14 +5,15 @@
  */
 package OregonTrail.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hansm
  */
 class FixSicknessView {
 
-    void displayFixSicknessView() {
-        System.out.println("Calls displayFixSicknessView in FSV");
+    public FixSicknessView() {
+
     }
-    
 }

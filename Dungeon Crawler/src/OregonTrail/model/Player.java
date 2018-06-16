@@ -14,16 +14,25 @@ import java.util.Objects;
  */
 public class Player implements Serializable
 {
+
     private String name;
     private double bestScore;
     private ArrayList<Game> games = new ArrayList<Game>();
     private double currentCash;
+    private int Health;
     private Player player;
-    public Player() 
-    {
+    public Player() {
        
     }
-
+    
+    public int getHealth() {
+        return Health;
+    }
+    
+    public void setHealth(int Health) {
+        this.Health = Health;
+    }
+    
     public Player getPlayer() {
         return player;
     }

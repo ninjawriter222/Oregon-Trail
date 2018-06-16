@@ -35,7 +35,7 @@ public class GameMenuView {
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\n+                   Game Menu                     +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
-                + "\nType the letter corresponding to the option/action+"
+                + "\nType the letter corresponding to the option/action"
                 + "\nyou want to take."
                 + "\n"
                 + "\nV - Press V to view the map"
@@ -185,9 +185,6 @@ public class GameMenuView {
     private void fixSickness() {
         System.out.println("***Calls the fixSickness method in FSV***");
         GameControl.createNewGame(OregonTrail.getPlayer());
-        
-        FixSicknessView fixSickView = new FixSicknessView();
-        fixSickView.displayFixSicknessView();
     }
     
     private void navigate() {

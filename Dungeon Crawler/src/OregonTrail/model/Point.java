@@ -7,8 +7,7 @@ package OregonTrail.model;
 
 import java.io.Serializable;
 
-public class Point implements Serializable 
-{
+public class Point implements Serializable {
 
 Point(double x, double y)
 {
