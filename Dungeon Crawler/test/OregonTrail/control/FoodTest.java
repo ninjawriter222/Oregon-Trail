@@ -43,10 +43,7 @@ public class FoodTest {
         int expResult = 60;
         int result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
-        
+               
         System.out.println("\tTest 2");
         invFood = -1;
         famSize = 5;
@@ -54,10 +51,7 @@ public class FoodTest {
         expResult = -1;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
-        
+                
         System.out.println("\tTest 3");
         invFood = 100;
         famSize = -1;
@@ -65,10 +59,7 @@ public class FoodTest {
         expResult = -2;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
-        
+                
         System.out.println("\tTest 4");
         invFood = 89;
         famSize = 4;
@@ -76,9 +67,6 @@ public class FoodTest {
         expResult = -3;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
         
         System.out.println("\tTest 5");
         invFood = 76;
@@ -87,9 +75,6 @@ public class FoodTest {
         expResult = 70;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
         
         System.out.println("\tTest 6");
         invFood = 1;
@@ -98,9 +83,6 @@ public class FoodTest {
         expResult = 0;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
         
         System.out.println("\tTest 7");
         invFood = 500;
@@ -109,10 +91,7 @@ public class FoodTest {
         expResult = 490;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
-        
+                
         System.out.println("\tTest 8");
         invFood = 20;
         famSize = 2;
@@ -120,9 +99,6 @@ public class FoodTest {
         expResult = 6;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
         
         System.out.println("\tTest 9");
         invFood = 124;
@@ -131,8 +107,7 @@ public class FoodTest {
         expResult = 118;
         result = instance.determineFoodBalance(invFood, famSize, indvFoodNeed);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
