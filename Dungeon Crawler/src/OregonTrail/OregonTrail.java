@@ -6,6 +6,7 @@
 package OregonTrail;
 
 import OregonTrail.control.GameControl;
+import OregonTrail.control.PlayerHealth;
 import OregonTrail.model.Player;
 import OregonTrail.view.StartProgramView;
 import OregonTrail.model.Game;
