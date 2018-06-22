@@ -72,8 +72,6 @@ public class HelpMenuView {
             case "E":
                 this.helpEstimate();
                 return false;
-            case "Q":
-                return true;
             default:
                 System.out.println("ERROR: Invalid selection, Please try again");
         }

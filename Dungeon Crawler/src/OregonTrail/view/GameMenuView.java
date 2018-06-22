@@ -111,8 +111,6 @@ public class GameMenuView {
             case "H":
                 getHelp();
                 return false;
-            case "Q":
-                return true;
             default:
                 System.out.println("ERROR: Invalid selection. Please try again");
         }
