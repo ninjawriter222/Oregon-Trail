@@ -7,7 +7,6 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
-import java.util.Scanner;
 
 /**
  *
@@ -39,6 +38,7 @@ public abstract class GameMenuView extends View {
                 + "\n---------------------------");
     }
     
+    @Override
     public void display(){
     }
     
@@ -46,6 +46,7 @@ public abstract class GameMenuView extends View {
         return inputs;
     }
 
+    @Override
     public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         switch (menuItem.toUpperCase()) {

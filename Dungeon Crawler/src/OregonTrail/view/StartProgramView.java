@@ -6,7 +6,6 @@
 package OregonTrail.view;
 
 import OregonTrail.control.GameControl;
-import java.util.Scanner;
 import OregonTrail.model.Player;
 
 /**
@@ -22,6 +21,7 @@ public abstract class StartProgramView extends View {
     }
 
     //String[] inputs = this.getInputs();
+    @Override
     public void display() {
     }
 

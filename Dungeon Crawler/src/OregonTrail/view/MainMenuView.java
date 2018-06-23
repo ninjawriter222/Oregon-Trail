@@ -7,9 +7,7 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
-import OregonTrail.control.PlayerHealth;
 import OregonTrail.model.Player;
-import java.util.Scanner;
 
 /**
  *
@@ -32,6 +30,7 @@ public abstract class MainMenuView extends View {
                 + "\n---------------------------");
     }
 
+    @Override
     public void display() {
     }
 
@@ -39,6 +38,7 @@ public abstract class MainMenuView extends View {
         return inputs;
     }
 
+    @Override
     public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         switch (menuItem.toUpperCase()) {
@@ -62,7 +62,7 @@ public abstract class MainMenuView extends View {
         GameControl.createNewGame(OregonTrail.getPlayer());
         Player instance = new Player();
             instance.setHealth(100);
-        GameMenuView gameMenuView = new GameMenuView();
+        GameMenuView gameMenuView = new GameMenuView() {};
         gameMenuView.display();
         
     }
