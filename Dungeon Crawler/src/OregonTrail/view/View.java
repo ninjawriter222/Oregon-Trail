@@ -12,8 +12,6 @@ import java.util.Scanner;
  * @author hansm
  */
 public abstract class View implements ViewInterface {
-    public View() {
-    }
     
     @Override
     public void display() {
@@ -28,12 +26,16 @@ public abstract class View implements ViewInterface {
         } while (!endOfView);
     }
     
+    protected String displayMessage;
+    
+    public View(String message) {
+        this.displayMessage = message;
+    }
+    
     @Override
     public String[] getInputs() {
         String[] inputs = new String[1];
-        System.out.println("Hello and welcome to our Oregon Trail game."
-                + "\nYour goal in this game will be to safely make it to Oregon."
-                + "\nWe hope you die a lot!");
+        System.out.println(displayMessage);
         boolean valid = false;
         do {
             System.out.println("Please enter in your characters name.");

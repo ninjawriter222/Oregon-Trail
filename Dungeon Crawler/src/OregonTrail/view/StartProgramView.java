@@ -13,46 +13,24 @@ import OregonTrail.model.Player;
  *
  * @author MasterCraft Computer
  */
-public class StartProgramView extends View {
+public abstract class StartProgramView extends View {
 
     public StartProgramView() {
+        super("Hello and welcome to our Oregon Trail game."
+                + "\nYour goal in this game will be to safely make it to Oregon."
+                + "\nWe hope you die a lot!");
     }
 
     //String[] inputs = this.getInputs();
     public void display() {
-        boolean endOfView = false;
-        String[] inputs = null;
-        do {
-            inputs = getInputs();
-            if (inputs[0] == null || "Q".equals(inputs[0].toUpperCase())) {
-                return;
-            }
-            endOfView = doAction(inputs);
-        } while (!endOfView);
     }
 
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("Hello and welcome to our Oregon Trail game."
-                + "\nYour goal in this game will be to safely make it to Oregon."
-                + "\nWe hope you die a lot!");
-        boolean valid = false;
-        do {
-            System.out.println("Please enter in your characters name.");
-            Scanner keyboard = new Scanner(System.in);
-            inputs[0] = keyboard.nextLine().toString();
-            if (inputs[0].length() < 1) {
-                System.out.println("ERROR: Your name must be longer than 1 "
-                        + "character.");
-                valid = false;
-            } else {
-                valid = true;
-            }
-        } while (!valid);
+    public String[] getInputs(String[] inputs) {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         String playersName = inputs[0];
         //The line after this is important and 
         //took me a long time to figure out.
@@ -66,7 +44,7 @@ public class StartProgramView extends View {
                 + "\n    Hello " + inputs[0] + " and welcome to the Oregon "
                 + "Trail!"
                 + "\n=================================================");
-        MainMenuView mainMenuView = new MainMenuView();
+        MainMenuView mainMenuView = new MainMenuView() {};
         mainMenuView.display();
         return true;
     }

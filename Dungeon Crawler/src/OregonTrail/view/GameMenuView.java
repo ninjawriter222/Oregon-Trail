@@ -13,26 +13,10 @@ import java.util.Scanner;
  *
  * @author MasterCraft Computer
  */
-public class GameMenuView {
-    public void displayGameMenuView(){
-    }
+public abstract class GameMenuView extends View {
     
-    void display() {
-        boolean endView = false;
-        String[] inputs = null;
-        do {
-            inputs = getInputs();
-            if (inputs[0] == null || "Q".equals(inputs[0].toUpperCase())) {
-                return;
-            } else {
-                endView = doAction(inputs);
-            }
-        } while (!endView);
-    }
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++"
+    public GameMenuView() {
+        super("+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\n+                   Game Menu                     +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\nType the letter corresponding to the option/action"
@@ -53,23 +37,16 @@ public class GameMenuView {
                 + "\nH - Press H to open the Help menu"
                 + "\nQ - Press Q to quit"
                 + "\n---------------------------");
-        boolean valid = false;
-        do {
-            System.out.println("Please enter in your selection");
-            Scanner keyboard = new Scanner(System.in);
-            inputs[0] = keyboard.nextLine().toString();
-            if (inputs[0].length() < 1) {
-                System.out.println("ERROR: Your selction must be longer than 1"
-                        + " character.");
-                valid = false;
-            } else {
-                valid = true;
-            }
-        } while (!valid);
+    }
+    
+    public void display(){
+    }
+    
+    public String[] getInputs(String[] inputs) {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    public boolean doAction(String[] inputs) {
         String menuItem = inputs[0];
         switch (menuItem.toUpperCase()) {
             case "V":
