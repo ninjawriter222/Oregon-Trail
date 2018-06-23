@@ -8,13 +8,12 @@ package OregonTrail.view;
 import OregonTrail.control.GameControl;
 import java.util.Scanner;
 import OregonTrail.model.Player;
-import java.io.Serializable;
 
 /**
  *
  * @author MasterCraft Computer
  */
-public class StartProgramView implements Serializable {
+public class StartProgramView extends View {
 
     public StartProgramView() {
     }
