@@ -13,7 +13,7 @@ import OregonTrail.model.Player;
  *
  * @author MasterCraft Computer
  */
-public abstract class MainMenuView extends View {
+public class MainMenuView extends View {
 
     public MainMenuView() {
         super("+++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -62,9 +62,8 @@ public abstract class MainMenuView extends View {
         GameControl.createNewGame(OregonTrail.getPlayer());
         Player instance = new Player();
             instance.setHealth(100);
-        GameMenuView gameMenuView = new GameMenuView() {};
+        GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
-        
     }
 
     private void restartGame() {

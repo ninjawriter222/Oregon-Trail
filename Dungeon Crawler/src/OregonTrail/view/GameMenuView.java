@@ -12,7 +12,7 @@ import OregonTrail.control.GameControl;
  *
  * @author MasterCraft Computer
  */
-public abstract class GameMenuView extends View {
+public class GameMenuView extends View {
     
     public GameMenuView() {
         super("+++++++++++++++++++++++++++++++++++++++++++++++++++"

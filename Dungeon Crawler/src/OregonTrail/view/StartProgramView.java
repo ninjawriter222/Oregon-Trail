@@ -12,7 +12,7 @@ import OregonTrail.model.Player;
  *
  * @author MasterCraft Computer
  */
-public abstract class StartProgramView extends View {
+public class StartProgramView extends View {
 
     public StartProgramView() {
         super("Hello and welcome to our Oregon Trail game."
@@ -44,7 +44,7 @@ public abstract class StartProgramView extends View {
                 + "\n    Hello " + inputs[0] + " and welcome to the Oregon "
                 + "Trail!"
                 + "\n=================================================");
-        MainMenuView mainMenuView = new MainMenuView() {};
+        MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
         return true;
     }

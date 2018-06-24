@@ -19,6 +19,24 @@ public class Game implements Serializable
     private final ArrayList<Game> games = new ArrayList<Game>();
     private Map map;
     private Scene scene;
+    private ArrayList[] actors;
+    private ArrayList[] items;
+
+    public ArrayList[] getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList[] actors) {
+        this.actors = actors;
+    }
+
+    public ArrayList[] getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList[] items) {
+        this.items = items;
+    }
     
     public Game() 
     {
@@ -65,12 +83,14 @@ public class Game implements Serializable
         hash = 53 * hash + Objects.hashCode(this.games);
         hash = 53 * hash + Objects.hashCode(this.map);
         hash = 53 * hash + Objects.hashCode(this.scene);
+        hash = 53 * hash + Objects.hashCode(this.actors);
+        hash = 53 * hash + Objects.hashCode(this.items);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "totalMoves=" + totalMoves + ", player=" + player + ", games=" + games + ", map=" + map + ", scene=" + scene + '}';
+        return "Game{" + "totalMoves=" + totalMoves + ", player=" + player + ", games=" + games + ", map=" + map + ", scene=" + scene + ", actors=" + actors + ", items=" + items + "}";
     }
     
     @Override
@@ -98,6 +118,12 @@ public class Game implements Serializable
             return false;
         }
         if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (!Objects.equals(this.actors, other.actors)) {
+            return false;
+        }
+        if (!Objects.equals(this.items, other.items)) {
             return false;
         }
         return true;

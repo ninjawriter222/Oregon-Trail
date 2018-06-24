@@ -32,6 +32,10 @@ public abstract class View implements ViewInterface {
         this.displayMessage = message;
     }
     
+    /**
+     *
+     * @return
+     */
     @Override
     public String[] getInputs() {
         String[] inputs = new String[1];
