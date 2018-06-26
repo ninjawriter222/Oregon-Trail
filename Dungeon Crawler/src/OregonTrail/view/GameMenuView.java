@@ -124,7 +124,7 @@ public class GameMenuView extends View {
         GameControl.createNewGame(OregonTrail.getPlayer());
         
         ExploreLocationView exploreLoc = new ExploreLocationView();
-        exploreLoc.displayExploreLocationView();
+        exploreLoc.display();
     }
     
     private void move() {
