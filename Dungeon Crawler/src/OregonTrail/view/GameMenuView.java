@@ -89,7 +89,6 @@ public class GameMenuView extends View {
     
     private void viewMap() {
         System.out.println("***Calls the viewMap method in MapV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         MapView mapView = new MapView();
         mapView.displayMapView();
@@ -97,7 +96,6 @@ public class GameMenuView extends View {
     
     private void viewInventory() {
         System.out.println("***Calls the viewInventory method in IV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         InventoryView inventoryView = new InventoryView();
         inventoryView.displayInventoryView();
@@ -105,7 +103,6 @@ public class GameMenuView extends View {
     
     private void purchaseSupplies() {
         System.out.println("***Calls the purchaseSupplies method in PSV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         PurchaseSuppliesView purchaseView = new PurchaseSuppliesView();
         purchaseView.displayPurchaseSuppliesView();
@@ -113,7 +110,6 @@ public class GameMenuView extends View {
     
     private void exploreLoc() {
         System.out.println("***Calls the exploreLoc method in ELV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         ExploreLocationView exploreLoc = new ExploreLocationView();
         exploreLoc.display();
@@ -121,7 +117,6 @@ public class GameMenuView extends View {
     
     private void move() {
         System.out.println("***Calls the move method in MoveView***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         MoveView moveView = new MoveView();
         moveView.display();
@@ -129,7 +124,6 @@ public class GameMenuView extends View {
     
     private void estimateRes() {
         System.out.println("***Calls the estimateRes method in ERV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         EstimateResourcesView estResView = new EstimateResourcesView();
         estResView.displayEstimateResourcesView();
@@ -137,7 +131,6 @@ public class GameMenuView extends View {
     
     private void repairWagon() {
         System.out.println("***Calls the repairWagon method in RWV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         RepairWagonView repWagView = new RepairWagonView();
         repWagView.displayRepairWagonView();
@@ -145,7 +138,6 @@ public class GameMenuView extends View {
     
     private void useTools() {
         System.out.println("***Calls the useTools method in UTV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         UseToolsView useToolsView = new UseToolsView();
         useToolsView.displayUseToolsView();
@@ -153,12 +145,10 @@ public class GameMenuView extends View {
     
     private void fixSickness() {
         System.out.println("***Calls the fixSickness method in FSV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
     }
     
     private void navigate() {
         System.out.println("***Calls the navigate method in NV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         NavigateView nav = new NavigateView();
         nav.displayNavigateView();
@@ -166,7 +156,6 @@ public class GameMenuView extends View {
     
     private void huntRes() {
         System.out.println("***Calls the huntRes method in HRV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         HuntResourcesView huntResView = new HuntResourcesView();
         huntResView.displayHuntResourcesView();
@@ -174,7 +163,6 @@ public class GameMenuView extends View {
     
     private void saveGame() {
         System.out.println("***Calls the saveGame method in SGV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
         
         SaveGameView saveView = new SaveGameView();
         saveView.displaySaveGameView();
@@ -182,7 +170,7 @@ public class GameMenuView extends View {
     
     private void getHelp() {
         HelpMenuView instance = new HelpMenuView();
-        instance.displayHelpMenuView();
+        instance.display();
     }
 }
 

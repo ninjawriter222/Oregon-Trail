@@ -40,8 +40,6 @@ public class MainMenuView extends View {
             case "R":
                 restartGame();
                 return false;
-            case "H":
-                getHelp();
             case "E":
                 return true;
             default:
@@ -65,8 +63,4 @@ public class MainMenuView extends View {
 //        instance.display();
     }
 
-    private void getHelp() {
-        HelpMenuView instance = new HelpMenuView();
-//        instance.display();
-    }
 }

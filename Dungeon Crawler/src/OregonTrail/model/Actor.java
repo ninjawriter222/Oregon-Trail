@@ -6,12 +6,13 @@
 package OregonTrail.model;
 
 import java.awt.Point;
+import java.io.Serializable;
 
 /**
  *
  * @author MasterCraft Computer
  */
-public enum Actor 
+public enum Actor implements Serializable
 {
     
     Bob("Bob", "He is Bob.", new Point(1,1)),
@@ -48,4 +49,3 @@ public enum Actor
     }
 
 }
-

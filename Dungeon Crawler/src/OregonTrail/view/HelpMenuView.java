@@ -11,26 +11,10 @@ import java.util.Scanner;
  *
  * @author MasterCraft Computer
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
-    public void displayHelpMenuView() {
-        boolean endOfView = false;
-        String[] inputs = null;
-        do {
-            inputs = getInputs();
-            if (inputs[0] == null || "Q".equals(inputs[0].toUpperCase())) {
-                return;
-            } else {
-                endOfView = doAction(inputs);
-            }
-        } while (!endOfView);
-    }
-        
-    private String[] getInputs() {
-        boolean endOfView = false;
-        boolean valid = false;
-        String[] inputs = new String[1];
-        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++"
+    public HelpMenuView() {
+        super("+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\n+             This is the HELP Menu               +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\nType the letter corresponding"
@@ -45,23 +29,58 @@ public class HelpMenuView {
                 + "\nQ - Press Q to Quit"
                 + "\n"
                 + "\n---------------------------");
-        do {
-            System.out.println("Please enter in your selection");
-            Scanner keyboard = new Scanner(System.in);
-            inputs[0] = keyboard.nextLine().toString();
-            if (inputs[0].length() < 1) {
-                System.out.println("ERROR: Your selction must be longer than 1"
-                        + " character.");
-                valid = false;
-            } else {
-                valid = true;
-            }
-        } while (!valid);
-        return inputs;
     }
-
-    private boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    
+//    public void display() {
+//        boolean endOfView = false;
+//        String[] inputs = null;
+//        do {
+//            inputs = getInputs();
+//            if (inputs[0] == null || "Q".equals(inputs[0].toUpperCase())) {
+//                return;
+//            } else {
+//                endOfView = doAction(inputs);
+//            }
+//        } while (!endOfView);
+//    }
+        
+//    private String[] getInputs() {
+//        boolean endOfView = false;
+//        boolean valid = false;
+//        String[] inputs = new String[1];
+//        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++"
+//                + "\n+             This is the HELP Menu               +"
+//                + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
+//                + "\nType the letter corresponding"
+//                + "\nto the option/action you want"
+//                + "\nto take."
+//                + "\n"
+//                + "\nG - Press G to see what is the goal of the game?"
+//                + "\nM - Press M to see how to move."
+//                + "\nE - Press E to see an estimate of how many resources you "
+//                + "might need"
+//                + "\nR - Press R to learn how to use your resources."
+//                + "\nQ - Press Q to Quit"
+//                + "\n"
+//                + "\n---------------------------");
+//        do {
+//            System.out.println("Please enter in your selection");
+//            Scanner keyboard = new Scanner(System.in);
+//            inputs[0] = keyboard.nextLine().toString();
+//            if (inputs[0].length() < 1) {
+//                System.out.println("ERROR: Your selction must be longer than 1"
+//                        + " character.");
+//                valid = false;
+//            } else {
+//                valid = true;
+//            }
+//        } while (!valid);
+//        return inputs;
+//    }
+    
+    @Override
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
         switch (menuItem.toUpperCase()) {
             case "G":
                 this.helpGoal();

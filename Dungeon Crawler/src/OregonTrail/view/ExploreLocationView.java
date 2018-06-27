@@ -7,6 +7,7 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
+import OregonTrail.model.Actor;
 
 /**
  *
@@ -32,24 +33,20 @@ public class ExploreLocationView extends View {
     @Override
     public boolean doAction(String inputs) {
         String menuItem = inputs;
-        
-        if (menuItem.toUpperCase() == "Y") {
-            viewCharDialogue();
-            return false;
-        } else if (menuItem.toUpperCase() == "N") {
-            return true;
-        } else{
-            System.out.println("ERROR: Invalid selection. Please try again");
+        switch (menuItem.toUpperCase()) {
+            case "Y":
+                showCharDialogue();
+                return false;
+            case "N":
+                return true;
+            default:
+                System.out.println("ERROR: Invalid selection. Please try again");
         }
         return false;
     }
     
-    private void viewCharDialogue() {
-        System.out.println("***Calls the viewCharDialogue method in CharDialogueV***");
-        GameControl.createNewGame(OregonTrail.getPlayer());
-        
-        CharDialogueView charDialogueView = new CharDialogueView();
-        charDialogueView.display();
+    private void showCharDialogue() {
+        System.out.println("***Calls the dialogue for a character in the Model Layer***");
     }
     
 }
