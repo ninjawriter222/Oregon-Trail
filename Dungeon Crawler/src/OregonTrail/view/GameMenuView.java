@@ -39,16 +39,8 @@ public class GameMenuView extends View {
     }
     
     @Override
-    public void display(){
-    }
-    
-    public String[] getInputs(String[] inputs) {
-        return inputs;
-    }
-
-    @Override
-    public boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
         switch (menuItem.toUpperCase()) {
             case "V":
                 viewMap();

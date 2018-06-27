@@ -11,6 +11,8 @@ import OregonTrail.model.Player;
 import OregonTrail.view.StartProgramView;
 import OregonTrail.model.Game;
 import OregonTrail.view.GameMenuView;
+import OregonTrail.view.ViewInterface;
+import OregonTrail.view.View;
 
 
 /**
@@ -27,8 +29,7 @@ public class OregonTrail {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
         
-        GameControl.createNewGame(getPlayer());
-        GameMenuView gameMenuView = new GameMenuView();
+//        GameControl.createNewGame(getPlayer());
         
     }
 

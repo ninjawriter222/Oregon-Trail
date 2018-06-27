@@ -30,23 +30,15 @@ public class ExploreLocationView extends View {
     }
     
     @Override
-    public void display(){
-    }
-    
-    public String[] getInputs(String[] inputs) {
-        return inputs;
-    }
-    
-    @Override
-    public boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
         
         if (menuItem.toUpperCase() == "Y") {
             viewCharDialogue();
             return false;
         } else if (menuItem.toUpperCase() == "N") {
             return true;
-        } else (menuItem.toUpperCase() != "Y") {
+        } else{
             System.out.println("ERROR: Invalid selection. Please try again");
         }
         return false;

@@ -31,16 +31,8 @@ public class MainMenuView extends View {
     }
 
     @Override
-    public void display() {
-    }
-
-    public String[] getInputs(String[] inputs) {
-        return inputs;
-    }
-
-    @Override
-    public boolean doAction(String[] inputs) {
-        String menuItem = inputs[0];
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
         switch (menuItem.toUpperCase()) {
             case "N":
                 this.startNewGame();
@@ -63,18 +55,18 @@ public class MainMenuView extends View {
         Player instance = new Player();
             instance.setHealth(100);
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
+            gameMenuView.display();
     }
 
     private void restartGame() {
         System.out.println("***Calls the restartGame method in MMV***");
         
         StartExistingGameView instance = new StartExistingGameView();
-        instance.displayStartExistingGameView();
+//        instance.display();
     }
 
     private void getHelp() {
         HelpMenuView instance = new HelpMenuView();
-        instance.displayHelpMenuView();
+//        instance.display();
     }
 }

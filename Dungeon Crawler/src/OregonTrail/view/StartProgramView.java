@@ -17,21 +17,14 @@ public class StartProgramView extends View {
     public StartProgramView() {
         super("Hello and welcome to our Oregon Trail game."
                 + "\nYour goal in this game will be to safely make it to Oregon."
-                + "\nWe hope you die a lot!");
+                + "\nWe hope you die a lot!"
+                + "\nPlease enter in your characters name:");
     }
 
     //String[] inputs = this.getInputs();
     @Override
-    public void display() {
-    }
-
-    public String[] getInputs(String[] inputs) {
-        return inputs;
-    }
-
-    @Override
-    public boolean doAction(String[] inputs) {
-        String playersName = inputs[0];
+    public boolean doAction(String inputs) {
+        String playersName = inputs;
         //The line after this is important and 
         //took me a long time to figure out.
         Player player = GameControl.savePlayer(playersName);
@@ -41,9 +34,10 @@ public class StartProgramView extends View {
             return false;
         }
         System.out.println("================================================="
-                + "\n    Hello " + inputs[0] + " and welcome to the Oregon "
+                + "\n    Hello " + inputs + " and welcome to the Oregon "
                 + "Trail!"
                 + "\n=================================================");
+        
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
         return true;
@@ -99,4 +93,6 @@ public class StartProgramView extends View {
 //        }
 //        return true;
 //    }
+
+    
 }

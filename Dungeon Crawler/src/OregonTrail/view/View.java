@@ -12,41 +12,44 @@ import java.util.Scanner;
  * @author hansm
  */
 public abstract class View implements ViewInterface {
+   
+    protected String promptMessage;
+    
+    public View(String message){
+        this.promptMessage = message;
+        
+    }
     
     @Override
     public void display() {
         boolean endOfView = false;
-        String[] inputs = null;
+        String inputs = "";
         do {
             inputs = getInputs();
-            if (inputs[0] == null || "Q".equals(inputs[0].toUpperCase())) {
+            if (inputs == null || "Q".equals(inputs.toUpperCase())) {
                 return;
             }
             endOfView = doAction(inputs);
         } while (!endOfView);
     }
-    
-    protected String displayMessage;
-    
-    public View(String message) {
-        this.displayMessage = message;
+    @Override
+    public String getInputs(){
+      return getInput(promptMessage);  
     }
-    
     /**
      *
      * @return
      */
     @Override
-    public String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println(displayMessage);
+    public String getInput(String menuText) {
+        String inputs = "";
         boolean valid = false;
         do {
-            System.out.println("Please enter in your characters name.");
+            System.out.println(menuText);
             Scanner keyboard = new Scanner(System.in);
-            inputs[0] = keyboard.nextLine().toString();
-            if (inputs[0].length() < 1) {
-                System.out.println("ERROR: Your name must be longer than 1 "
+            inputs = keyboard.nextLine().toString();
+            if (inputs.length() < 1) {
+                System.out.println("ERROR: Your input must be longer than 1 "
                         + "character.");
                 valid = false;
             } else {
