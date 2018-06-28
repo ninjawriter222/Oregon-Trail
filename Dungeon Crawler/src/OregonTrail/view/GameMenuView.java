@@ -126,7 +126,7 @@ public class GameMenuView extends View {
         System.out.println("***Calls the estimateRes method in ERV***");
         
         EstimateResourcesView estResView = new EstimateResourcesView();
-        estResView.displayEstimateResourcesView();
+        estResView.display();
     }
     
     private void repairWagon() {
