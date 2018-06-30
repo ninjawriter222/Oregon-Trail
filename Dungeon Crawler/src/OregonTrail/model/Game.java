@@ -19,30 +19,32 @@ public class Game implements Serializable
     private final ArrayList<Game> games = new ArrayList<Game>();
     private Map map;
     private Scene scene;
-    private ArrayList[] actors;
-    private ArrayList[] items;
-
-    public ArrayList[] getActors() {
-        return actors;
-    }
-
-    public void setActors(ArrayList[] actors) {
-        this.actors = actors;
-    }
-
-    public ArrayList[] getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList[] items) {
-        this.items = items;
-    }
+    private ArrayList<Actor> actors = new ArrayList<Actor>();
+    private ArrayList<Inventory> items = new ArrayList<Inventory>();
     
     public Game() 
     {
     
     }
 
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    public ArrayList<Inventory> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Inventory> items) {
+        this.items = items;
+    }
+
+    
+    
     public Player getPlayer() {
         return player;
     }

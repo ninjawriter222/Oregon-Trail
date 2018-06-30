@@ -5,6 +5,8 @@
  */
 package OregonTrail.control;
 
+import OregonTrail.model.Map;
+
 /**
  *
  * @author hansm
@@ -12,5 +14,6 @@ package OregonTrail.control;
 public class MapControl {
     public static Map createMap(int noOfRows, int noOfColumns) {
         System.out.println("***The createMap method has been called***");
+        return null;
     }
 }

@@ -158,7 +158,7 @@ public class GameMenuView extends View {
         System.out.println("***Calls the huntRes method in HRV***");
         
         HuntResourcesView huntResView = new HuntResourcesView();
-        huntResView.displayHuntResourcesView();
+        huntResView.display();
     }
     
     private void saveGame() {

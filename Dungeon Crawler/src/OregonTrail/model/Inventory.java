@@ -17,18 +17,18 @@ public class Inventory implements Serializable
     private int ammount;
   // create additional properties such as type
     /**
-     * Get the value of ammount
+     * Get the value of amount
      *
-     * @return the value of ammount
+     * @return the value of amount
      */
     public int getAmmount() {
         return ammount;
     }
 
     /**
-     * Set the value of ammount
+     * Set the value of amount
      *
-     * @param ammount new value of ammount
+     * @param ammount new value of amount
      */
     public void setAmmount(int ammount) {
         this.ammount = ammount;
