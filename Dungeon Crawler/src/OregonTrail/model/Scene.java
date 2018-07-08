@@ -1,42 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package OregonTrail.model;
 
+import OregonTrail.model.SceneGroup;
+
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author MasterCraft Computer
- */
-public class Scene implements Serializable 
-{
+public class Scene implements Serializable {
+
     private String name;
-    private String Obstacle;
-    private String terrain;
-    private String weather;
-    private String symbol;
-    private double difficulty;
-    private double speedValue;
-    private String sceneRef;
-    private String attribute;
-    private String locRef;
     private String description;
-    private String resourceAvail;
-
-    public Scene() {
-    }
-    
-    public String getObstacle() {
-        return Obstacle;
-    }
-
-    public void setObstacle(String Obstacle) {
-        this.Obstacle = Obstacle;
-    }
+    private Obstacle obstacle;
+    private int mapLocation; // this represents integer location associated with this scence
+    private int distanceFromNauvoo;
+    private String mapSymbol;
+    private boolean blocked;
 
     public String getName() {
         return name;
@@ -44,70 +22,6 @@ public class Scene implements Serializable
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getTerrain() {
-        return terrain;
-    }
-
-    public void setTerrain(String terrain) {
-        this.terrain = terrain;
-    }
-
-    public String getWeather() {
-        return weather;
-    }
-
-    public void setWeather(String weather) {
-        this.weather = weather;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
-    public double getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(double difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public double getSpeedValue() {
-        return speedValue;
-    }
-
-    public void setSpeedValue(double speedValue) {
-        this.speedValue = speedValue;
-    }
-
-    public String getSceneRef() {
-        return sceneRef;
-    }
-
-    public void setSceneRef(String sceneRef) {
-        this.sceneRef = sceneRef;
-    }
-
-    public String getAttribute() {
-        return attribute;
-    }
-
-    public void setAttribute(String attribute) {
-        this.attribute = attribute;
-    }
-
-    public String getLocRef() {
-        return locRef;
-    }
-
-    public void setLocRef(String locRef) {
-        this.locRef = locRef;
     }
 
     public String getDescription() {
@@ -118,29 +32,54 @@ public class Scene implements Serializable
         this.description = description;
     }
 
-    public String getResourceAvail() {
-        return resourceAvail;
+    public Obstacle getObstacle() {
+        return obstacle;
     }
 
-    public void setResourceAvail(String resourceAvail) {
-        this.resourceAvail = resourceAvail;
+    public void setObstacle(Obstacle obstacle) {
+        this.obstacle = obstacle;
+    }
+
+    public int getMapLocation() {
+        return mapLocation;
+    }
+
+    public void setMapLocation(int mapLocation) {
+        this.mapLocation = mapLocation;
+    }
+
+    public int getDistanceFromNauvoo() {
+        return distanceFromNauvoo;
+    }
+
+    public void setDistanceFromNauvoo(int distanceFromNauvoo) {
+        this.distanceFromNauvoo = distanceFromNauvoo;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    public boolean getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + Objects.hashCode(this.Obstacle);
-        hash = 67 * hash + Objects.hashCode(this.terrain);
-        hash = 67 * hash + Objects.hashCode(this.weather);
-        hash = 67 * hash + Objects.hashCode(this.symbol);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.difficulty) ^ (Double.doubleToLongBits(this.difficulty) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.speedValue) ^ (Double.doubleToLongBits(this.speedValue) >>> 32));
-        hash = 67 * hash + Objects.hashCode(this.sceneRef);
-        hash = 67 * hash + Objects.hashCode(this.attribute);
-        hash = 67 * hash + Objects.hashCode(this.locRef);
-        hash = 67 * hash + Objects.hashCode(this.description);
-        hash = 67 * hash + Objects.hashCode(this.resourceAvail);
+        hash = 89 * hash + Objects.hashCode(this.name);
+        hash = 89 * hash + Objects.hashCode(this.description);
+        hash = 89 * hash + Objects.hashCode(this.obstacle);
+        hash = 89 * hash + this.mapLocation;
+        hash = 89 * hash + this.distanceFromNauvoo;
         return hash;
     }
 
@@ -156,40 +95,19 @@ public class Scene implements Serializable
             return false;
         }
         final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.difficulty) != Double.doubleToLongBits(other.difficulty)) {
+        if (this.mapLocation != other.mapLocation) {
             return false;
         }
-        if (Double.doubleToLongBits(this.speedValue) != Double.doubleToLongBits(other.speedValue)) {
+        if (this.distanceFromNauvoo != other.distanceFromNauvoo) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.Obstacle, other.Obstacle)) {
-            return false;
-        }
-        if (!Objects.equals(this.terrain, other.terrain)) {
-            return false;
-        }
-        if (!Objects.equals(this.weather, other.weather)) {
-            return false;
-        }
-        if (!Objects.equals(this.symbol, other.symbol)) {
-            return false;
-        }
-        if (!Objects.equals(this.sceneRef, other.sceneRef)) {
-            return false;
-        }
-        if (!Objects.equals(this.attribute, other.attribute)) {
-            return false;
-        }
-        if (!Objects.equals(this.locRef, other.locRef)) {
-            return false;
-        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.resourceAvail, other.resourceAvail)) {
+        if (!Objects.equals(this.obstacle, other.obstacle)) {
             return false;
         }
         return true;
@@ -197,8 +115,19 @@ public class Scene implements Serializable
 
     @Override
     public String toString() {
-        return "Scene{" + "name=" + name + ", Obstacle=" + Obstacle + ", terrain=" + terrain + ", weather=" + weather + ", symbol=" + symbol + ", difficulty=" + difficulty + ", speedValue=" + speedValue + ", sceneRef=" + sceneRef + ", attribute=" + attribute + ", locRef=" + locRef + ", description=" + description + ", resourceAvail=" + resourceAvail + '}';
+        return "Scene{" + "name=" + name + ", description=" + description + ", obstacle=" + obstacle + ", mapLocation=" + mapLocation + ", distanceFromNauvoo=" + distanceFromNauvoo + '}';
     }
-    
-}
 
+
+    public Scene() {
+    }
+
+    public Scene(String name, String description, Obstacle obstacle, int mapLocation, int distanceFromNauvoo) {
+        this.name = name;
+        this.description = description;
+        this.obstacle = obstacle;
+        this.mapLocation = mapLocation;
+        this.distanceFromNauvoo = distanceFromNauvoo;
+    }
+
+}

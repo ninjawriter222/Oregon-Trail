@@ -12,25 +12,21 @@ import java.util.Objects;
  *
  * @author hansm
  */
-public class Obstacle implements Serializable {
-    
-    private String name;
-    private String description;
-    private String type;
-    private Float healthValue;
-    private Float staminaValue;
+public class Obstacle implements Serializable{
+    String  description;     //Describes the obstacle
+    boolean allowSpiritualGuidance;
+    int  possibilityOfHappening;    //percentage of event occuring (0-100)
+    int  possibilityOfDeath;        //percentage of death occuring (0-100)
+
+    public Obstacle(String description, boolean allowSpiritualGuidance, int possibilityOfHappening, int possibilityOfDeath) {
+        this.description = description;
+        this.allowSpiritualGuidance = allowSpiritualGuidance;
+        this.possibilityOfHappening = possibilityOfHappening;
+        this.possibilityOfDeath = possibilityOfDeath;
+    }
+
 
     public Obstacle() {
-    }
-    
-    
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -41,48 +37,45 @@ public class Obstacle implements Serializable {
         this.description = description;
     }
 
-    public String getType() {
-        return type;
+    public boolean isAllowSpiritualGuidance() {
+        return allowSpiritualGuidance;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAllowSpiritualGuidance(boolean allowSpiritualGuidance) {
+        this.allowSpiritualGuidance = allowSpiritualGuidance;
     }
 
-    public Float getHealthValue() {
-        return healthValue;
+    public int getPossibilityOfHappening() {
+        return possibilityOfHappening;
     }
 
-    public void setHealthValue(Float healthValue) {
-        this.healthValue = healthValue;
+    public void setPossibilityOfHappening(int possibilityOfHappening) {
+        this.possibilityOfHappening = possibilityOfHappening;
     }
 
-    public Float getStaminaValue() {
-        return staminaValue;
+    public int getPossibilityOfDeath() {
+        return possibilityOfDeath;
     }
 
-    public void setStaminaValue(Float staminaValue) {
-        this.staminaValue = staminaValue;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + Objects.hashCode(this.type);
-        hash = 97 * hash + Objects.hashCode(this.healthValue);
-        hash = 97 * hash + Objects.hashCode(this.staminaValue);
-        return hash;
+    public void setPossibilityOfDeath(int possibilityOfDeath) {
+        this.possibilityOfDeath = possibilityOfDeath;
     }
 
     @Override
     public String toString() {
-        return "Obstacle{" + "name=" + name + ", description=" + description + ", type=" + type + ", healthValue=" + healthValue + ", staminaValue=" + staminaValue + '}';
+        return "Obstacle{" + "description=" + description + ", allowSpiritualGuidance=" + allowSpiritualGuidance + ", possibilityOfHappening=" + possibilityOfHappening + ", possibilityOfDeath=" + possibilityOfDeath + '}';
     }
 
-    
-    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 61 * hash + Objects.hashCode(this.description);
+        hash = 61 * hash + (this.allowSpiritualGuidance ? 1 : 0);
+        hash = 61 * hash + this.possibilityOfHappening;
+        hash = 61 * hash + this.possibilityOfDeath;
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -95,44 +88,21 @@ public class Obstacle implements Serializable {
             return false;
         }
         final Obstacle other = (Obstacle) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (this.allowSpiritualGuidance != other.allowSpiritualGuidance) {
+            return false;
+        }
+        if (this.possibilityOfHappening != other.possibilityOfHappening) {
+            return false;
+        }
+        if (this.possibilityOfDeath != other.possibilityOfDeath) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        if (!Objects.equals(this.healthValue, other.healthValue)) {
-            return false;
-        }
-        if (!Objects.equals(this.staminaValue, other.staminaValue)) {
-            return false;
-        }
         return true;
     }
 
-    public void getName(String a_bear) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    public void getDescription(String a_really_rough_one) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getType(String hard) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getHealthValue(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getStaminaValue(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
     
 }

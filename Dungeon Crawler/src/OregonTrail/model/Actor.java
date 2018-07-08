@@ -12,22 +12,24 @@ import java.io.Serializable;
  *
  * @author MasterCraft Computer
  */
-public enum Actor implements Serializable
-{
+public class Actor implements Serializable{
     
-    Bob("Bob", "He is Bob.", new Point(1,1)),
-    Shnob("Snob", "He is a Snobb", new Point(2,2));
+    private String name;
+    private String description;
+    private int row;
+    private int column;
     
-    private final String name;
-    private final String description;
-    private final Point coordinates;
+//    Actor(String description){
+//        this.description = description;
+//        coordinates = new Point(1,1);
+//    }
 
-    Actor(String name, String description, Point coordinates)
-        {
+    public Actor() {
         this.name = name;
         this.description = description;
-        this.coordinates = coordinates;
-        }
+        this.row = row;
+        this.column = column;
+    }
 
     public String getName() {
         return name;
@@ -36,16 +38,32 @@ public enum Actor implements Serializable
     public String getDescription() {
         return description;
     }
-
-    public Point getCoordinates() {
-        return coordinates;
+    public int getRow() {
+        return row;
     }
 
-    
-    
-    @Override
-    public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+    public int getColumn() {
+        return column;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Actor{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+//    } 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
 }

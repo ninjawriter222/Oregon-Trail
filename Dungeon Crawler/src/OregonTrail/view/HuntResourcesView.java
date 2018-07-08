@@ -9,10 +9,14 @@ package OregonTrail.view;
  *
  * @author MasterCraft Computer
  */
-class HuntResourcesView {
+public class HuntResourcesView extends View {
 
-    void displayHuntResourcesView() {
-        System.out.println("***Calls displayHuntResourcesView***");    
+    public HuntResourcesView() {
+        super ("***Calls displayHuntResourcesView***");
     }
-    
+    @Override
+    public boolean doAction(String inputs) {
+        String menuItem = inputs;
+        return false;
+}
 }

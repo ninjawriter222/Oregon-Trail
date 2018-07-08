@@ -21,6 +21,15 @@ public class Player implements Serializable
     private double currentCash;
     private int Health;
     private Player player;
+    InventoryItem[] inventory;
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
     public Player() {
        
     }

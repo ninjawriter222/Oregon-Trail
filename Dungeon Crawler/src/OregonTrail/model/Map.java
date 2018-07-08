@@ -21,9 +21,10 @@ public class Map implements Serializable {
     private int totalColumns;
     private int currentRow;
     private int currentColumn;
-    private Location location;
+    private Location[][] locations;
+    private Location currentLocation;
 
-    public Map() {
+    public Map(int i, int i0) {
     }
 
     public int getTotalRows() {
@@ -58,73 +59,15 @@ public class Map implements Serializable {
         this.currentColumn = currentColumn;
     }
 
-    public Location getLocation() {
-        return location;
+   public Location[][] getLocations() {
+        return locations;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-    
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + this.totalRows;
-        hash = 29 * hash + this.totalColumns;
-        hash = 29 * hash + this.currentRow;
-        hash = 29 * hash + this.currentColumn;
-        hash = 29 * hash + Objects.hashCode(this.location);
-        return hash;
+    public Location getCurrentLocation() {
+        return currentLocation;
     }
 
-    @Override
-    public String toString() {
-        return "Map{" + "totalRows=" + totalRows + ", totalColumns=" + totalColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", location=" + location + '}';
-    }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (this.totalRows != other.totalRows) {
-            return false;
-        }
-        if (this.totalColumns != other.totalColumns) {
-            return false;
-        }
-        if (this.currentRow != other.currentRow) {
-            return false;
-        }
-        if (this.currentColumn != other.currentColumn) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
-            return false;
-        }
-        return true;
-    }
-
-    public void getCurrentColumn(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getCurrentRow(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getTotalColumns(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void getTotalRows(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setCurrentLocation(Location location) {
+        this.currentLocation = location;
     }
 }
