@@ -7,6 +7,7 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
+import OregonTrail.model.Game;
 import OregonTrail.model.Player;
 
 /**

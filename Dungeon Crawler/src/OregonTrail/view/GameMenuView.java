@@ -88,8 +88,6 @@ public class GameMenuView extends View {
     }
     
     private void viewMap() {
-        System.out.println("***Calls the viewMap method in MapV***");
-        
         MapView mapView = new MapView();
         mapView.displayMapView();
     }

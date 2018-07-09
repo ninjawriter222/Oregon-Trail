@@ -25,6 +25,7 @@ public class Map implements Serializable {
     private Location currentLocation;
 
     public Map(int i, int i0) {
+        
     }
 
     public int getTotalRows() {

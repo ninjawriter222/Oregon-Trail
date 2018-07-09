@@ -16,13 +16,33 @@ public class Game implements Serializable
 {
     private double totalMoves;
     private Player player;
-    private final ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Game> games = new ArrayList<Game>();
     private Map map;
     private Scene scene;
     private ArrayList<Actor> actors = new ArrayList<Actor>();
     private ArrayList<Inventory> items = new ArrayList<Inventory>();
     private InventoryItem[] inventory;
+    private Game game;
 
+    public Game() {
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public ArrayList<Game> getgame(Game currentGame) {
+        return games;
+    }
+    
+    public void setGame(ArrayList<Game> games){
+        this.games = games;
+    }
+    
     public InventoryItem[] getInventory() {
         return inventory;
     }
@@ -31,11 +51,6 @@ public class Game implements Serializable
         this.inventory = inventory;
     }
     
-    public Game() 
-    {
-    
-    }
-
     public ArrayList<Actor> getActors() {
         return actors;
     }
