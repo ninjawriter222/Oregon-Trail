@@ -8,6 +8,7 @@ package OregonTrail.control;
 import OregonTrail.model.AvailableCash;
 import OregonTrail.model.Inventory;
 import OregonTrail.model.Player;
+import exceptions.PurchaseSuppliesException;
 
 /**
  *
@@ -15,22 +16,26 @@ import OregonTrail.model.Player;
  */
 public class PurchaseSupplies {
     
-    public static double purchase(double itemAmmount, double cost) {
+    public static double purchase(double itemAmmount, double cost) 
+    throws PurchaseSuppliesException {
+        
         if (itemAmmount < 0 || itemAmmount > 99) {
-            return -1;
+            throw new PurchaseSuppliesException ("The item amount cannot be less than 0 or greater than 99.");
         }
         
         double purchase = itemAmmount * cost;        
         return purchase;
     }
     
-    public static double calculateRemainingCash(Inventory item, Player player) {
+    public static double calculateRemainingCash(Inventory item, Player player) 
+    throws PurchaseSuppliesException {
+        
         if (item.getAmmount() < 0 || item.getCost() < 0)
-            return -2;
+            throw new PurchaseSuppliesException ("The item quantity and the item cost cannot be less than 0.");
         
         double remainingCash = (player.getCurrentCash() - purchase(item.getAmmount(), item.getCost()));
         if (remainingCash < 0 || remainingCash > 2000)
-            return -1;
+            throw new PurchaseSuppliesException ("The cash balance cannot be less than 0 or greater than 2000.");
         else {
             player.setCurrentCash(remainingCash);
             return remainingCash;

@@ -26,6 +26,14 @@ public class OregonTrail {
     
     public static void main(String[] args) {
         
+        try {
+            
+        } catch () {
+            System.out.println();
+            return false;
+        }
+        return true;
+        
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
         

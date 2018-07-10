@@ -39,6 +39,12 @@ public class MapControl {
         map.setCurrentRow(row);
         map.setCurrentColumn(column);
     }
+    
+    public static Location moveActor(Actor, int, int) {
+        if (actor == null) {
+            throw new MapControlException ("Invalid actor cannot be null.")
+        }
+    }
 
     public enum SceneType {
         start,
@@ -445,4 +451,5 @@ public class MapControl {
         return scenes;
     }
 
+    
 }
