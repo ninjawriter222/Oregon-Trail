@@ -13,6 +13,7 @@ import OregonTrail.model.Game;
 import OregonTrail.view.GameMenuView;
 import OregonTrail.view.ViewInterface;
 import OregonTrail.view.View;
+import exceptions.OregonTrailException;
 
 
 /**
@@ -24,20 +25,20 @@ public class OregonTrail {
     private static Player player = null;
     private static Game currentGame = null;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws OregonTrailException {
         
-        try {
-            
-        } catch () {
-            System.out.println();
-            return false;
-        }
-        return true;
-        
+//        try {
+//            GameControl.createNewGame(OregonTrail.getPlayer());
+//            
+////        GameControl.createNewGame(getPlayer());
+//        } catch (OregonTrailException ote) {
+//            System.out.println(ote.getMessage());
+//            return;
+//        }
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
         
-//        GameControl.createNewGame(getPlayer());
+        
         
     }
 

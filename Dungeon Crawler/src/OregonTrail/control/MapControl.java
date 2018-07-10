@@ -40,12 +40,6 @@ public class MapControl {
         map.setCurrentColumn(column);
     }
     
-    public static Location moveActor(Actor, int, int) {
-        if (actor == null) {
-            throw new MapControlException ("Invalid actor cannot be null.")
-        }
-    }
-
     public enum SceneType {
         start,
         chariton,
