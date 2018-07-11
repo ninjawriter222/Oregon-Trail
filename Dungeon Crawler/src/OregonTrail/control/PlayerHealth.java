@@ -37,13 +37,13 @@ public class PlayerHealth {
         return 0;
     }
         
-    public static int changeHealthAccordingToSpeed(){
+    public static int changeHealthAccordingToSpeed(int speed){
         
         Player instance = new Player();
         int currentHealth = instance.getHealth();
         int newHealth = 0;
-        Speed instance1 = new Speed();
-        int speed = instance1.getSpeed();
+//        Speed instance1 = new Speed();
+//        int speed = instance1.getSpeed();
         if (speed == 1){
             newHealth = currentHealth - 10;
         }

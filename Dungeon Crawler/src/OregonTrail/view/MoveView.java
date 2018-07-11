@@ -5,6 +5,7 @@
  */
 package OregonTrail.view;
 
+import OregonTrail.OregonTrail;
 import OregonTrail.control.LocationControl;
 import OregonTrail.model.Location;
 import OregonTrail.control.PlayerHealth;
@@ -36,13 +37,12 @@ class MoveView extends View{
     
     @Override
     public boolean doAction(String inputs) {
-        String speed = inputs;
+//        String speed = inputs;
         Speed instance = new Speed();
-        double getSpeed = instance.setSpeed(speed);
-        LocationControl instance1 = new LocationControl();
-        Location instance3 = new Location();
-        double row = instance3.getRow();
-        double column = instance3.getColumn();
+        int speed = instance.setSpeed(inputs);
+//        Location currentLocation = OregonTrail.getCurrentGame().getMap().getCurrentLocation();
+//        double row = currentLocation.getRow();
+//        double column = currentLocation.getColumn();
         if ("slow".equals(inputs) || "noramal".equals(inputs) || 
                 "fast".equals(inputs)) {
             System.out.println("You have set your speed to " + inputs);
@@ -53,10 +53,19 @@ class MoveView extends View{
             instance2.setHealth(newHealth);
         }  
         PlayerHealth.checkSickness();
-        LocationControl.changeLocation(row, column, getSpeed);
-        PlayerHealth.changeHealthAccordingToSpeed();
+        int ret = LocationControl.changeLocation(speed);
+        PlayerHealth.changeHealthAccordingToSpeed(speed);
         Player player = new Player();
         System.out.println("Current Health = " + player.getHealth());
+        if (ret == 0){
+            System.out.println("invalid entry");
+        }
+        else if (ret == -1){
+            System.out.println("invalid Entry");
+        }
+        else {
+            System.out.println("You have successfully moved to " + OregonTrail.getCurrentGame().getMap().getCurrentLocation().getScene().getName());
+        }
         }
     return true;
     }

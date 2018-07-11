@@ -5,7 +5,11 @@
  */
 package OregonTrail.control;
 
+import OregonTrail.OregonTrail;
+import OregonTrail.model.Map;
 import OregonTrail.model.Speed;
+import java.util.HashSet;
+import java.util.Set;
 
 /*import OregonTrail.model.Speed;*/
 /**
@@ -14,33 +18,44 @@ import OregonTrail.model.Speed;
  */
 public class LocationControl {
 
-    public static double checkLocation(double getRow, double getColumn) {
-        double currentRow = getRow;
-        double currentColumn = getColumn;
+//    public static double checkLocation(double getRow, double getColumn)
+//        {
+//        double currentRow = getRow;
+//        double currentColumn = getColumn;
+//
+//        if (currentRow < 0) {
+//            return -1;
+//        }
+//
+//        if (currentColumn < 0) {
+//            return -1;
+//        }
+//
+//        return 1;
+//    }
 
-        if (currentRow < 0) {
+    public static int changeLocation(int getSpeed) {
+        Map map = OregonTrail.getCurrentGame().getMap();
+        int row = map.getCurrentRow();
+        int column = map.getCurrentColumn();
+        int speed = getSpeed;
+        int newRow = row + speed;
+//        if (column < map.getTotalColumns()-1)
+        if (newRow > map.getTotalRows()-1) {
+            if (column < map.getTotalColumns()-1){
+                newRow = 0;
+                column++;
+                map.getCurrentLocation().setVisited(Boolean.TRUE);
+                map.setCurrentRow(newRow);
+                map.setCurrentColumn(column);
+                return 1;
+            }
+           
             return -1;
-        }
-
-        if (currentColumn < 0) {
-            return -1;
-        }
-
-        return 1;
-    }
-
-    public static double changeLocation(double getRow, double getColumn, double getSpeed) {
-        double row = getRow;
-        double column = getColumn;
-        double speed = getSpeed;
-        double newRow = row + speed;
-
-        if (newRow > 4) {
-            newRow = 0;
-            column = +1;
-            return column;
         } else {
-            return newRow;
+            map.getCurrentLocation().setVisited(Boolean.TRUE);
+            map.setCurrentRow(newRow);
+            return 1;
         }
 
     }

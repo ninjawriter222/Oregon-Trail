@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Speed implements Serializable {
 
-    int speed;
+//    int speed;
 
     public int setSpeed(String speed) {
         if ("slow".equals(speed)) {
@@ -28,11 +28,6 @@ public class Speed implements Serializable {
             System.out.println("Please enter a valid speed");
         }
         return 0;
-    }
-
-    public int getSpeed() {
-
-        return speed;
     }
 
 }

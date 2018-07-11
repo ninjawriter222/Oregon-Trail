@@ -10,6 +10,8 @@ public class MapControl {
         // create the map
         Map map = new Map(5, 5);
 
+        
+        
         // create the scenes for the game
         Scene[] scenes = createScenes();
 
@@ -28,7 +30,7 @@ public class MapControl {
             String name;
             name = "Invalid, map cannot be null.";
         }
-        map.setCurrentLocation(map.getLocations()[row][column]);
+//        map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
 
         if (row < 0 || row >= map.getLocations().length

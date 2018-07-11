@@ -13,6 +13,7 @@ import OregonTrail.model.Location;
 import OregonTrail.model.Map;
 import OregonTrail.model.Player;
 import OregonTrail.model.Scene;
+import java.util.ArrayList;
 
 /**
  *
@@ -48,13 +49,10 @@ public class GameControl {
         Map map = MapControl.createMap(); //create and initialize new map
         game.setMap(map); // save map in game
         
-        Actor[] actor = GameControl.createActorList();
-        game.setActor(actor); // create game player names
+        ArrayList<Actor> actors = GameControl.createActorList();
+        game.setActors(actors); // create game player names
     }
 
-    public static Player savePlayer(String playersName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     public enum Item {
         axles,
         wheels,
@@ -310,9 +308,9 @@ public class GameControl {
         joseph;
     }
 
-    private static Actor[] createActorList() {
+    private static ArrayList<Actor> createActorList() {
         // created array(list) of inventory items
-        Actor[] actor = new Actor[5];
+        ArrayList<Actor> actors = new ArrayList<Actor>();
         
         // Brigham
         Actor brigham = new Actor();
@@ -321,7 +319,7 @@ public class GameControl {
         brigham.setRow(0);
         brigham.setColumn(0);
 //        brigham.coordinates("");
-        actor[Actors.brigham.ordinal()] = brigham;
+        actors.add(brigham);
         
         // Mariam
         Actor mariam = new Actor();
@@ -330,7 +328,7 @@ public class GameControl {
         mariam.setRow(0);
         mariam.setColumn(0);
  //       mariam.coordinates("");        
-        actor[Actors.mariam.ordinal()] = mariam;
+        actors.add(mariam);
 
         // William
         Actor william = new Actor();
@@ -339,7 +337,7 @@ public class GameControl {
         william.setRow(0);
         william.setColumn(0);
  //       william.coordinates("");        
-        actor[Actors.william.ordinal()] = william;
+        actors.add(william);
 
         // Eliza
         Actor eliza = new Actor();
@@ -348,7 +346,7 @@ public class GameControl {
         eliza.setRow(0);
         eliza.setColumn(0);
  //       eliza.coordinates("");
-        actor[Actors.eliza.ordinal()] = eliza;
+        actors.add(eliza);
 
         // Joseph
         Actor joseph = new Actor();
@@ -357,9 +355,9 @@ public class GameControl {
         joseph.setRow(0);
         joseph.setColumn(0);
 //        joseph.coordinates("");
-        actor[Actors.joseph.ordinal()] = joseph;
+        actors.add(joseph);
 
-        return actor;
+        return actors;
     }
     
     static void assignScenesToLocations(Map map, Scene[] scenes){
@@ -391,7 +389,7 @@ public class GameControl {
         locations[4][2].setScene(scenes[MapControl.SceneType.green.ordinal()]);
         locations[4][3].setScene(scenes[MapControl.SceneType.bridger.ordinal()]);
         locations[4][4].setScene(scenes[MapControl.SceneType.needles.ordinal()]);
-        locations[5][0].setScene(scenes[MapControl.SceneType.saltLakeValley.ordinal()]);
+//        locations[][].setScene(scenes[MapControl.SceneType.saltLakeValley.ordinal()]);
     }
     
 }

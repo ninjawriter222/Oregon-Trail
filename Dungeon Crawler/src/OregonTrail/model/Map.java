@@ -22,10 +22,22 @@ public class Map implements Serializable {
     private int currentRow;
     private int currentColumn;
     private Location[][] locations;
-    private Location currentLocation;
 
-    public Map(int i, int i0) {
-        
+    public Map(int rows, int columns) {
+        totalRows = rows;
+        currentRow = 0;
+        totalColumns = columns;
+        currentColumn = 0;
+        this.locations = new Location[totalRows][totalColumns];
+        for(int row = 0; row < totalRows; row++){
+            for(int column = 0; column < totalColumns; column++){
+                Location location = new Location();
+                location.setVisited(Boolean.FALSE);
+                location.setScene(null);
+                locations[row][column] = location;
+            }
+            
+        }
     }
 
     public int getTotalRows() {
@@ -64,11 +76,11 @@ public class Map implements Serializable {
         return locations;
     }
 
-    public Location getCurrentLocation() {
-        return currentLocation;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
-    public void setCurrentLocation(Location location) {
-        this.currentLocation = location;
+    public Location getCurrentLocation() {
+        return locations[currentRow][currentColumn];
     }
 }
