@@ -27,16 +27,15 @@ public class OregonTrail {
     
     public static void main(String[] args) throws OregonTrailException {
         
-//        try {
-//            GameControl.createNewGame(OregonTrail.getPlayer());
-//            
-////        GameControl.createNewGame(getPlayer());
-//        } catch (OregonTrailException ote) {
-//            System.out.println(ote.getMessage());
-//            return;
-//        }
-        StartProgramView startProgramView = new StartProgramView();
+        try {
+            StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
+
+        } catch (Throwable ote) {
+            System.out.println(ote.getMessage());
+            ote.printStackTrace();
+        }
+        
         
         
         
