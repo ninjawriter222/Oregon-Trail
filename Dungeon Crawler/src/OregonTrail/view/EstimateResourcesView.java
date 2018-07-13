@@ -33,72 +33,72 @@ public class EstimateResourcesView extends View {
         switch (menuItem.toUpperCase()) {
             case "F":
                 getFoodAmt();
-                System.out.println("You have " + "FOOD AMOUNT" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "FOOD AMOUNT" + ". How much would you like to leave behind?");
                 return false;
             case "A":
                 getAxeAmt();
-                System.out.println("You have " + "AXE QUANTITY" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "AXE QUANTITY" + ". How much would you like to leave behind?");
                 return false;
             case "H":
                 getHammerAmt();
-                System.out.println("You have " + "HAMMER QUANTITY" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "HAMMER QUANTITY" + ". How much would you like to leave behind?");
                 return false;
             case "S":
                 getSpareAmt();
-                System.out.println("You have " + "SPARE WHEEL(S) QTY" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "SPARE WHEEL(S) QTY" + ". How much would you like to leave behind?");
                 return false;
             case "B":
                 getBulletAmt();
-                System.out.println("You have " + "BULLETS" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "BULLETS" + ". How much would you like to leave behind?");
                 return false;
             case "W":
                 getWoodAmt();
-                System.out.println("You have " + "WOOD" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "WOOD" + ". How much would you like to leave behind?");
                 return false;
             case "R":
                 getBlanketAmt();
-                System.out.println("You have " + "BLANKETS" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "BLANKETS" + ". How much would you like to leave behind?");
                 return false;
             case "D":
                 getWaterAmt();
-                System.out.println("You have " + "DRINKING WATER" + ". How much would you like to leave behind?");
+                this.console.println("You have " + "DRINKING WATER" + ". How much would you like to leave behind?");
                 return false;
             default:
-                System.out.println("ERROR: Invalid selection. Please try again");
+                this.console.println("ERROR: Invalid selection. Please try again");
         }
         return false;
     }
 
     private void getFoodAmt() {
-        System.out.println("***Calls the food qty in the Model Layer***");
+        this.console.println("***Calls the food qty in the Model Layer***");
     }
 
     private void getAxeAmt() {
-        System.out.println("***Calls the axe qty in the Model Layer***");
+        this.console.println("***Calls the axe qty in the Model Layer***");
     }
 
     private void getHammerAmt() {
-        System.out.println("***Calls the hammer qty in the Model Layer***");
+        this.console.println("***Calls the hammer qty in the Model Layer***");
     }
 
     private void getWaterAmt() {
-        System.out.println("***Calls the water qty in the Model Layer***");
+        this.console.println("***Calls the water qty in the Model Layer***");
     }
 
     private void getSpareAmt() {
-        System.out.println("***Calls the spare wheel qty in the Model Layer***");
+        this.console.println("***Calls the spare wheel qty in the Model Layer***");
     }
 
     private void getBulletAmt() {
-        System.out.println("***Calls the bullet qty in the Model Layer***");
+        this.console.println("***Calls the bullet qty in the Model Layer***");
     }
 
     private void getWoodAmt() {
-        System.out.println("***Calls the wood qty in the Model Layer***");
+        this.console.println("***Calls the wood qty in the Model Layer***");
     }
 
     private void getBlanketAmt() {
-        System.out.println("***Calls the blanket qty in the Model Layer***");
+        this.console.println("***Calls the blanket qty in the Model Layer***");
     }
     
 }

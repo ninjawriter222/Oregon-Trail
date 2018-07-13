@@ -44,7 +44,7 @@ public class MainMenuView extends View {
             case "E":
                 return true;
             default:
-                System.out.println("ERROR: Invalid selection. Please try again");
+                this.console.println("ERROR: Invalid selection. Please try again");
         }
         return false;
     }
@@ -58,7 +58,7 @@ public class MainMenuView extends View {
     }
 
     private void restartGame() {
-        System.out.println("***Calls the restartGame method in MMV***");
+        this.console.println("***Calls the restartGame method in MMV***");
         
         StartExistingGameView instance = new StartExistingGameView();
 //        instance.display();

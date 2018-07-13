@@ -40,13 +40,13 @@ public class ExploreLocationView extends View {
             case "N":
                 return true;
             default:
-                System.out.println("ERROR: Invalid selection. Please try again");
+                this.console.println("ERROR: Invalid selection. Please try again");
         }
         return false;
     }
     
     private void showCharDialogue() {
-        System.out.println("***Calls the dialogue for a character in the Model Layer***");
+        this.console.println("***Calls the dialogue for a character in the Model Layer***");
     }
     
 }

@@ -12,7 +12,7 @@ package OregonTrail.view;
 public class RepairWagonView {
 
     void displayRepairWagonView() {
-        System.out.println("Calls displayRepairWagonView in RWV");
+        this.console.println("Calls displayRepairWagonView in RWV");
     }
     
 }

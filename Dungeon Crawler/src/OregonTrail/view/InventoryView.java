@@ -19,12 +19,12 @@ public class InventoryView extends View {
         String menuItem = inputs;
         switch (menuItem.toUpperCase()) {
             default:
-                System.out.println("ERROR: Invalid selection. Please try again");
+                this.console.println("ERROR: Invalid selection. Please try again");
         }
         return false;
         }
         void displayInventoryView() {
-        System.out.println("Calls displayInventoryView in IV");
+        this.console.println("Calls displayInventoryView in IV");
     }
     }
 //    private String displayInvetory;

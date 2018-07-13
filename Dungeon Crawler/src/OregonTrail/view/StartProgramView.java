@@ -29,11 +29,11 @@ public class StartProgramView extends View {
         //took me a long time to figure out.
         Player player = GameControl.createPlayer(playersName);
         if (player == null) {
-            System.out.println("Could not create the player. Please enter a "
+            this.console.println("Could not create the player. Please enter a "
                     + "different name.");
             return false;
         }
-        System.out.println("================================================="
+        this.console.println("================================================="
                 + "\n    Hello " + inputs + " and welcome to the Oregon "
                 + "Trail!"
                 + "\n=================================================");

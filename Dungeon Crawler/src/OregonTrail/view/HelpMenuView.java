@@ -92,26 +92,26 @@ public class HelpMenuView extends View {
                 this.helpEstimate();
                 return false;
             default:
-                System.out.println("ERROR: Invalid selection, Please try again");
+                this.console.println("ERROR: Invalid selection, Please try again");
         }
         return false;
     }
 
     private void helpGoal() {
-        System.out.println("The Goal of the game is to reach Oregon.  You must "
+        this.console.println("The Goal of the game is to reach Oregon.  You must "
                 + "\ntrek through dangerous and untamed country in order to do so;"
                 + "\nfighting off starvation and sickness and many other obstacles"
                 + "\nthat might come your way.");
     }
 
     private void helpMove() {
-        System.out.println("In order to move you simply select move by typeing "
+        this.console.println("In order to move you simply select move by typeing "
                 + "\nin move and then type in your speed, whether it be slow, "
                 + "\nnormal, or fast.");    
     }
 
     private void helpEstimate() {
-        System.out.println("You'll need some resources to make it to Oregon. "
+        this.console.println("You'll need some resources to make it to Oregon. "
                 + "\nMore info to come.");   
     }
 

@@ -5,6 +5,9 @@
  */
 package OregonTrail.view;
 
+import OregonTrail.OregonTrail;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
    
     protected String promptMessage;
+    
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
     
     public View(String message){
         this.promptMessage = message;
@@ -46,7 +52,7 @@ public abstract class View implements ViewInterface {
         boolean valid = false;
         do {
             System.out.println(menuText);
-            Scanner keyboard = new Scanner(System.in);
+            inputs = this.keyboard.readLine();
             inputs = keyboard.nextLine().toString();
             if (inputs.length() < 1) {
                 System.out.println("ERROR: Your input must be longer than 1 "

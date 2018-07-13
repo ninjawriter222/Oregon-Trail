@@ -12,7 +12,7 @@ package OregonTrail.view;
 public class StartExistingGameView {
 
     public void displayStartExistingGameView() {
-        System.out.println("Calls displayStartExistingGameView in SEGV");
+        this.console.println("Calls displayStartExistingGameView in SEGV");
     }
     
 }

@@ -12,7 +12,7 @@ package OregonTrail.view;
 public class UseToolsView {
 
     void displayUseToolsView() {
-        System.out.println("Calls displayUseToolsView in UTV");
+        this.console.println("Calls displayUseToolsView in UTV");
     }
     
 }
