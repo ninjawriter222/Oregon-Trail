@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package OregonTrail.view;
+package exceptions;
 
 /**
  *
  * @author hansm
  */
-public class RepairWagonView {
-
-    void displayRepairWagonView() {
-        System.out.println("Calls displayRepairWagonView in RWV");
-    }
+public class SaveGameControlException {
     
 }

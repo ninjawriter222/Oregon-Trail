@@ -21,7 +21,7 @@ public class PurchaseSuppliesView {
     }
 
     void displayPurchaseSuppliesView() {
-        this.console.println("Calls displayPurchaseSuppliesView in PSV");
+        System.out.println("Calls displayPurchaseSuppliesView in PSV");
     }
     
 }

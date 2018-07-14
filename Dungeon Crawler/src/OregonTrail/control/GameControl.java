@@ -53,6 +53,26 @@ public class GameControl {
         game.setActors(actors); // create game player names
     }
 
+    public static void saveGame(Game game, String filePath) {
+        System.out.println("Called saveGame method.");
+    }
+
+    public static Game getGame(String filePath) {
+        if (filePath == null) {
+            throws GameControlException {
+                try (FileOutputStream fops = new FileOutputStream(filePath)) {
+                    ObjectOutputStream output = new ObjectOutputStream(fops);
+                    output.writeObject(game);
+                } 
+                catch (Exception e) {
+                    throw new GameControlException(e.getMessage());
+                }
+            }
+        }
+        
+        
+    }
+
     public enum Item {
         axles,
         wheels,

@@ -15,6 +15,7 @@ import OregonTrail.view.ViewInterface;
 import OregonTrail.view.View;
 import exceptions.OregonTrailException;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -27,9 +28,6 @@ import java.util.logging.Logger;
  * @author MasterCraft Computer
  */
 public class OregonTrail {
-    
-    
-    
     
     private static Player player = null;
     private static Game currentGame = null;
@@ -51,22 +49,27 @@ public class OregonTrail {
         }
         
         try {
-            OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
-            OregonTrail.outFile = new PrintWriter(System.out, true);
-            OregonTrail.logFile = new PrintWriter("logFile.txt");
+            inFile = new BufferedReader(new InputStreamReader(System.in));
+            outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
+        
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(OregonTrail.class.getName()).log(Level.SEVERE, null, ex);
         }
         finally {
             try {
-                if (OregonTrail.inFile != null);
+                if (inFile != null);
                 OregonTrail.inFile.close();
                 
-                if (OregonTrail.outFile != null);
-                OregonTrail.outFile.close();
+                if (outFile != null);
+                outFile.close();
                 
-                if (OregonTrail.logFile != null);
-                OregonTrail.logFile.close();
+                if (logFile != null);
+                logFile.close();
             } catch (IOException ex) {
-                System.out.println("Error closing files.");
+                System.console().printf("Error closing files.", args);
+                return;
             }
         }
     }
@@ -88,19 +91,19 @@ public class OregonTrail {
     }
 
     public static PrintWriter getOutFile() {
-        return outfile;
+        return outFile;
     }
 
     public static void setOutFile(PrintWriter outfile) {
-        OregonTrail.outfile = outfile;
+        OregonTrail.outFile = outfile;
     }
 
     public static BufferedReader getInFile() {
-        return infile;
+        return inFile;
     }
 
     public static void setInFile(BufferedReader infile) {
-        OregonTrail.infile = infile;
+        OregonTrail.inFile = infile;
     }
 
     public static PrintWriter getLogFile() {

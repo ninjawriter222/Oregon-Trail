@@ -23,15 +23,15 @@ public class MapView {
   Map map = game.getMap(); // retreive the map from game
   Location[][] locations = map.getLocations(); // retreive the locations from map
     // Build the heading of the map
-    this.console.print("  |");
+    System.out.print("  |");
     for( int column = 0; column < locations[0].length; column++){
       // print col numbers to side of map
-      this.console.print("  " + column + " |"); 
+      System.out.print("  " + column + " |"); 
     }
     // Now build the map.  For each row, show the column information
-    this.console.println();
+    System.out.println();
     for( int row = 0; row < locations.length; row++){
-     this.console.print(row + " "); // print row numbers to side of map
+     System.out.print(row + " "); // print row numbers to side of map
       for( int column = 0; column < locations[row].length; column++){
         // set default indicators as blanks
         leftIndicator = " ";
@@ -46,18 +46,18 @@ public class MapView {
            leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
            rightIndicator = "<"; // same as above
         }
-       this.console.print("|"); // start map with a |
+       System.out.print("|"); // start map with a |
         if(locations[row][column].getScene() == null)
         {
              // No scene assigned here so use ?? for the symbol
-             this.console.print(leftIndicator + "??" + rightIndicator);
+             System.out.print(leftIndicator + "??" + rightIndicator);
         }
         else
-          this.console.print(leftIndicator
+          System.out.print(leftIndicator
              + locations[row][column].getScene().getMapSymbol()
              + rightIndicator);
       }
-     this.console.println("|");
+     System.out.println("|");
     }
  }
     
