@@ -32,6 +32,7 @@ public class GameMenuView extends View {
                 + "\nD - Press D to deal with a sickness"
                 + "\nN - Press N to navigate terrain"
                 + "\nG - Press G to hunt for resources"
+                + "\nW - Press W to create a view of your inventory"
                 + "\nS - Press S to save the game"
                 + "\nH - Press H to open the Help menu"
                 + "\nQ - Press Q to quit"
@@ -74,6 +75,9 @@ public class GameMenuView extends View {
                 return false;
             case "G":
                 huntRes();
+                return false;
+            case "W":
+                createInvReport();
                 return false;
             case "S":
                 saveGame();
@@ -169,6 +173,10 @@ public class GameMenuView extends View {
     private void getHelp() {
         HelpMenuView instance = new HelpMenuView();
         instance.display();
+    }
+
+    private void createInvReport() {
+        this.console.println("***Creates a report of the player's inventory***");
     }
 }
 
