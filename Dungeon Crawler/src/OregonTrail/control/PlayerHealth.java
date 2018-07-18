@@ -5,6 +5,7 @@
  */
 package OregonTrail.control;
 
+import OregonTrail.OregonTrail;
 import OregonTrail.model.Player;
 import OregonTrail.model.Speed;
 
@@ -37,30 +38,29 @@ public class PlayerHealth {
         return 0;
     }
         
-    public static int changeHealthAccordingToSpeed(int speed){
+//    public static int changeHealthAccordingToSpeed(int speed){
         
-        Player instance = new Player();
-        int currentHealth = instance.getHealth();
-        int newHealth = 0;
-//        Speed instance1 = new Speed();
-//        int speed = instance1.getSpeed();
-        if (speed == 1){
-            newHealth = currentHealth - 10;
-        }
-        if (speed == 2){
-            newHealth = currentHealth - 20;
-        }
-        if (speed == 3){
-            newHealth = currentHealth - 30;
-        }
-        instance.setHealth(newHealth);
-        return newHealth;
-        }
+//        Player instance = new Player();
+//        int currentHealth = instance.getHealth();
+//        int newHealth = 0;
+////        Speed instance1 = new Speed();
+////        int speed = instance1.getSpeed();
+//        if (speed == 1){
+//            newHealth = currentHealth - 10;
+//        }
+//        if (speed == 2){
+//            newHealth = currentHealth - 20;
+//        }
+//        if (speed == 3){
+//            newHealth = currentHealth - 30;
+//        }
+//        instance.setHealth(newHealth);
+//        return newHealth;
+//        }
     
     public static void checkSickness(){
         System.out.println("***checkSickness called***");
-        Player player = new Player();
-        int currentHealth = player.getHealth();
+        int currentHealth = OregonTrail.getPlayer().getHealth();
         if (currentHealth < 20)
             System.out.println("You have fallen ill.");
     }

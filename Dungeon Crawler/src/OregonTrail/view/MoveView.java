@@ -17,24 +17,24 @@ import java.util.Scanner;
  *
  * @author MasterCraft Computer
  */
-class MoveView extends View{
+class MoveView extends View {
 
     public MoveView() {
-        super("+++++++++++++++++++++++++++++++++++++++++++++++++++" 
+        super("+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\n+             This is the Move Menu               +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
-                + "\nType the word corresponding" 
-                + "\nto the speed you want to" 
+                + "\nType the word corresponding"
+                + "\nto the speed you want to"
                 + "\ntravel at."
                 + "\n"
-                + "\nslow - sets your pace to slow" 
-                + "\nnormal - sets your pace to noraml." 
-                + "\nfast - sets your pace to fast." 
+                + "\nslow - sets your pace to slow"
+                + "\nnormal - sets your pace to noraml."
+                + "\nfast - sets your pace to fast."
                 + "\nrest - You won't move, but instead rest for a day."
-                + "\nE - Press E to exit" 
+                + "\nE - Press E to exit"
                 + "\n---------------------------");
     }
-    
+
     @Override
     public boolean doAction(String inputs) {
 //        String speed = inputs;
@@ -43,31 +43,45 @@ class MoveView extends View{
 //        Location currentLocation = OregonTrail.getCurrentGame().getMap().getCurrentLocation();
 //        double row = currentLocation.getRow();
 //        double column = currentLocation.getColumn();
-        if ("slow".equals(inputs) || "noramal".equals(inputs) || 
-                "fast".equals(inputs)) {
+        if ("slow".equals(inputs)) {
             System.out.println("You have set your speed to " + inputs);
-        if ("rest".equals(inputs)){
-            System.out.println("You have chosen to rest.");
-            Player instance2 = new Player();
-            int newHealth = instance2.getHealth() + 20;
-            instance2.setHealth(newHealth);
-        }  
-        PlayerHealth.checkSickness();
-        int ret = LocationControl.changeLocation(speed);
-        PlayerHealth.changeHealthAccordingToSpeed(speed);
-        Player player = new Player();
-        System.out.println("Current Health = " + player.getHealth());
-        if (ret == 0){
-            System.out.println("invalid entry");
+            int health = OregonTrail.getCurrentGame().getPlayer().getHealth();
+            int slow = 10;
+            int newHealth = health - slow;
+            OregonTrail.getCurrentGame().getPlayer().setHealth(newHealth);
         }
-        else if (ret == -1){
-            System.out.println("invalid Entry");
+        if ("normal".equals(inputs)){
+            System.out.println("You have set your speed to " + inputs);
+            int health = OregonTrail.getCurrentGame().getPlayer().getHealth();
+            int normal = 20;
+            int newHealth = health - normal;
+            OregonTrail.getCurrentGame().getPlayer().setHealth(newHealth);
         }
-        else {
-            System.out.println("You have successfully moved to " + OregonTrail.getCurrentGame().getMap().getCurrentLocation().getScene().getName());
+        if("fast".equals(inputs)){
+            System.out.println("You have set your speed to " + inputs);
+            int health = OregonTrail.getCurrentGame().getPlayer().getHealth();
+            int fast = 30;
+            int newHealth = health - fast;
+            OregonTrail.getCurrentGame().getPlayer().setHealth(newHealth);
         }
+        if ("rest".equals(inputs)) {
+                System.out.println("You have chosen to rest.");
+            int health = OregonTrail.getCurrentGame().getPlayer().getHealth();
+            int rest = 50;
+            int newHealth = health + rest;
+            OregonTrail.getCurrentGame().getPlayer().setHealth(newHealth);
+            }
+            PlayerHealth.checkSickness();
+            int ret = LocationControl.changeLocation(speed);
+            Player player = new Player();
+            System.out.println("Current Health = " + player.getHealth());
+            if (ret == 2) {
+                System.out.println("You have successfully made it to Zion.");
+                
+            } else {
+                System.out.println("You have successfully moved to " + OregonTrail.getCurrentGame().getMap().getCurrentLocation().getScene().getName());
+            }
+        return true;
         }
-    return true;
     }
-}    
 

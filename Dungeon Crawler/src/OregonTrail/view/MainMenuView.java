@@ -9,6 +9,9 @@ import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
 import OregonTrail.model.Game;
 import OregonTrail.model.Player;
+import exceptions.OregonTrailException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -58,8 +61,16 @@ public class MainMenuView extends View {
     }
 
     private void restartGame() {
-        this.console.println("***Calls the restartGame method in MMV***");
-        
+//        this.console.println("***Calls the restartGame method in MMV***");
+        String filename = getInput("Please enter the file name to be loaded.");
+        try {
+            Game game = GameControl.getGame(filename);
+            OregonTrail.setCurrentGame(game);
+            GameMenuView gameMenuView = new GameMenuView();
+            gameMenuView.display();
+        } catch (OregonTrailException ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
         StartExistingGameView instance = new StartExistingGameView();
 //        instance.display();
     }

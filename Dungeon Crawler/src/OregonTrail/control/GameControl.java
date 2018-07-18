@@ -13,6 +13,11 @@ import OregonTrail.model.Location;
 import OregonTrail.model.Map;
 import OregonTrail.model.Player;
 import OregonTrail.model.Scene;
+import exceptions.OregonTrailException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 /**
@@ -25,52 +30,59 @@ public class GameControl {
         if (playersName == null) {
             return null;
         }
-        
+
         Player player = new Player();
         player.setName(playersName);
-        
+
         OregonTrail.setPlayer(player); // save the player
-        
+
         return player;
     }
-    
+
     public static void createNewGame(Player player) {
         Game game = new Game(); // create new game
         OregonTrail.setCurrentGame(game); // save in Mormon Oregon Trail
-        
+
         game.setPlayer(player); // save player in game
         InventoryItem[] playerInventoryList = GameControl.createPlayerInventoryList();
         player.setInventory(playerInventoryList);
-        
+
         // create the inventory list and save in the game
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
-        
+
         Map map = MapControl.createMap(); //create and initialize new map
         game.setMap(map); // save map in game
-        
+
         ArrayList<Actor> actors = GameControl.createActorList();
         game.setActors(actors); // create game player names
     }
 
-    public static void saveGame(Game game, String filePath) {
-        System.out.println("Called saveGame method.");
-    }
-
-    public static Game getGame(String filePath) {
+    public static void saveGame(Game game, String filePath) throws OregonTrailException{
         if (filePath == null) {
-            throws GameControlException {
+            {
                 try (FileOutputStream fops = new FileOutputStream(filePath)) {
                     ObjectOutputStream output = new ObjectOutputStream(fops);
                     output.writeObject(game);
-                } 
-                catch (Exception e) {
-                    throw new GameControlException(e.getMessage());
+                } catch (Exception e) {
+                    throw new OregonTrailException(e.getMessage());
                 }
             }
         }
-        
-        
+
+    }
+
+    public static Game getGame(String filePath)throws OregonTrailException {
+        if (filePath == null) {
+                try (FileInputStream fips = new FileInputStream(filePath)) {
+                    ObjectInputStream input = new ObjectInputStream(fips);
+                    Game game = (Game) input.readObject();
+                    return game;
+                } catch (Exception e) {
+                    throw new OregonTrailException(e.getMessage());
+                }
+        }
+        throw new OregonTrailException("Invaild filename.");
     }
 
     public enum Item {
@@ -89,7 +101,7 @@ public class GameControl {
     private static InventoryItem[] createInventoryList() {
         // created array(list) of inventory items
         InventoryItem[] inventory = new InventoryItem[10];
-        
+
         // Axles
         InventoryItem axles = new InventoryItem();
         axles.setType("Store");
@@ -100,7 +112,7 @@ public class GameControl {
         axles.setUnitQuantity(1);
         axles.setUnits("Each");
         inventory[Item.axles.ordinal()] = axles;
-        
+
         // Wheels
         InventoryItem wheels = new InventoryItem();
         wheels.setType("Store");
@@ -108,8 +120,8 @@ public class GameControl {
         wheels.setQuantityInStock(20);
         wheels.setRequiredAmount(2);
         wheels.setCost(15);
-        wheels.setUnitQuantity(1);        
-        wheels.setUnits("Each");      
+        wheels.setUnitQuantity(1);
+        wheels.setUnits("Each");
         inventory[Item.wheels.ordinal()] = wheels;
 
         // Tongues
@@ -202,11 +214,11 @@ public class GameControl {
 
         return inventory;
     }
-    
+
     private static InventoryItem[] createPlayerInventoryList() {
         // created array(list) of inventory items
         InventoryItem[] inventory = new InventoryItem[10];
-        
+
         // Axles
         InventoryItem axles = new InventoryItem();
         axles.setType("Player");
@@ -217,7 +229,7 @@ public class GameControl {
         axles.setUnitQuantity(1);
         axles.setUnits("Each");
         inventory[Item.axles.ordinal()] = axles;
-        
+
         // Wheels
         InventoryItem wheels = new InventoryItem();
         wheels.setType("Player");
@@ -319,7 +331,7 @@ public class GameControl {
 
         return inventory;
     }
-    
+
     public enum Actors {
         brigham,
         mariam,
@@ -331,7 +343,7 @@ public class GameControl {
     private static ArrayList<Actor> createActorList() {
         // created array(list) of inventory items
         ArrayList<Actor> actors = new ArrayList<Actor>();
-        
+
         // Brigham
         Actor brigham = new Actor();
         brigham.setName("Brigham");
@@ -340,14 +352,14 @@ public class GameControl {
         brigham.setColumn(0);
 //        brigham.coordinates("");
         actors.add(brigham);
-        
+
         // Mariam
         Actor mariam = new Actor();
         mariam.setName("Mariam");
         mariam.setDescription("Brigham's wife and confidant.");
         mariam.setRow(0);
         mariam.setColumn(0);
- //       mariam.coordinates("");        
+        //       mariam.coordinates("");        
         actors.add(mariam);
 
         // William
@@ -356,7 +368,7 @@ public class GameControl {
         william.setDescription("Chosen to be a help and guide for this journey.");
         william.setRow(0);
         william.setColumn(0);
- //       william.coordinates("");        
+        //       william.coordinates("");        
         actors.add(william);
 
         // Eliza
@@ -365,7 +377,7 @@ public class GameControl {
         eliza.setDescription("Your first born daughter who is now 17 years old and a very good cook.");
         eliza.setRow(0);
         eliza.setColumn(0);
- //       eliza.coordinates("");
+        //       eliza.coordinates("");
         actors.add(eliza);
 
         // Joseph
@@ -379,10 +391,10 @@ public class GameControl {
 
         return actors;
     }
-    
-    static void assignScenesToLocations(Map map, Scene[] scenes){
+
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
-        
+
         // starting point
         locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[MapControl.SceneType.chariton.ordinal()]);
@@ -411,5 +423,5 @@ public class GameControl {
         locations[4][4].setScene(scenes[MapControl.SceneType.needles.ordinal()]);
 //        locations[][].setScene(scenes[MapControl.SceneType.saltLakeValley.ordinal()]);
     }
-    
+
 }

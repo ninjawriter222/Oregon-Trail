@@ -5,22 +5,14 @@
  */
 package OregonTrail;
 
-import OregonTrail.control.GameControl;
-import OregonTrail.control.PlayerHealth;
 import OregonTrail.model.Player;
 import OregonTrail.view.StartProgramView;
 import OregonTrail.model.Game;
-import OregonTrail.view.GameMenuView;
-import OregonTrail.view.ViewInterface;
-import OregonTrail.view.View;
 import exceptions.OregonTrailException;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -40,6 +32,9 @@ public class OregonTrail {
     public static void main(String[] args) throws OregonTrailException {
         
         try {
+            OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
+            outFile = new PrintWriter(System.out, true);
+            logFile = new PrintWriter("logFile.txt");
             StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
 
@@ -48,15 +43,6 @@ public class OregonTrail {
             ote.printStackTrace();
         }
         
-        try {
-            inFile = new BufferedReader(new InputStreamReader(System.in));
-            outFile = new PrintWriter(System.out, true);
-            logFile = new PrintWriter("logFile.txt");
-        
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(OregonTrail.class.getName()).log(Level.SEVERE, null, ex);
-        }
         finally {
             try {
                 if (inFile != null);
@@ -68,7 +54,7 @@ public class OregonTrail {
                 if (logFile != null);
                 logFile.close();
             } catch (IOException ex) {
-                System.console().printf("Error closing files.", args);
+                System.console().printf("OregonTrail", ex.getMessage());
                 return;
             }
         }

@@ -7,8 +7,11 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,6 +39,9 @@ public abstract class View implements ViewInterface {
                 return;
             }
             endOfView = doAction(inputs);
+             if (OregonTrail.getCurrentGame().isGameOver()){
+                 return;
+             }
         } while (!endOfView);
     }
     @Override
@@ -52,8 +58,12 @@ public abstract class View implements ViewInterface {
         boolean valid = false;
         do {
             System.out.println(menuText);
-            inputs = this.keyboard.readLine();
-            inputs = keyboard.nextLine().toString();
+            try {
+                inputs = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(), ex.getMessage());
+            }
+//            inputs = keyboard.nextLine().toString();
             if (inputs.length() < 1) {
                 System.out.println("ERROR: Your input must be longer than 1 "
                         + "character.");

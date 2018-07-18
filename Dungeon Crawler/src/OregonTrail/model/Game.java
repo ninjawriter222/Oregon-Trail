@@ -23,10 +23,20 @@ public class Game implements Serializable
     private ArrayList<Inventory> items = new ArrayList<Inventory>();
     private InventoryItem[] inventory;
     private Game game;
+    private boolean gameOver;
 
     public Game() {
+        gameOver = false;
     }
 
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+    
     public Game getGame() {
         return game;
     }
