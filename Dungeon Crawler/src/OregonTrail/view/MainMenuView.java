@@ -71,7 +71,7 @@ public class MainMenuView extends View {
         } catch (OregonTrailException ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
-        StartExistingGameView instance = new StartExistingGameView();
+        
 //        instance.display();
     }
 

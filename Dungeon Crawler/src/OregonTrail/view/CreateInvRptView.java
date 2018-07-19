@@ -5,12 +5,14 @@
  */
 package OregonTrail.view;
 
+import static java.lang.System.out;
+
 /**
  *
  * @author hansm
  */
 public class CreateInvRptView extends View {
-    public CreateInvRptView {
+    public CreateInvRptView() {
         super("+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\n+                Print Inventory                  +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -23,14 +25,9 @@ public class CreateInvRptView extends View {
 
     @Override
     public boolean doAction(String inputs) {
-        String menuItem = inputs;
-        switch (menuItem.toUpperCase()) {
-            case "C":
-                viewMap();
-                return false;
-            default:
-                this.console.println("ERROR: Invalid selection. Please try again");
-        }
+        String filePath = this.getInputs();
+            out.println("\nINVENTORY REPORT");
+            out.printf("%n%-15s%-5s","Inventory Item","Qty");
         return false;
     }
 }

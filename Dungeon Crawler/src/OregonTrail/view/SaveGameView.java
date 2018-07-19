@@ -20,39 +20,30 @@ public class SaveGameView extends View {
                 + "\n+        Would you like to save the game?         +"
                 + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
                 + "\n"
-                + "\nPress Y to save the game. Otherwise press Q to exit this view."
+                + "\nEnter the file name for the game you want to save."
+                + "\nOtherwise press Q to exit this view."
                 + "\n"
                 + "\n---------------------------");
     }
     
     @Override
     public boolean doAction(String inputs) {
-        String menuItem = inputs;
-        switch (menuItem.toUpperCase()) {
-            case "Y":
-                this.saveGame();
-                return true;
-            default:
-                System.out.println("ERROR: Invalid selection. Please try again");
+        if (inputs.isEmpty()) {
+            this.console.println("You must enter a valid file name.");
+            return false;
         }
-        return false;
-    }
-
-    private boolean saveGame() {
         Game game = OregonTrail.getCurrentGame();
-            
-                try {
-                    GameControl.saveGame(game, promptMessage);
-                } catch (Throwable sgce) {
-                    this.console.println("ERROR: Current game" + sgce);
-                    return false;
-                }
-                
-                this.console.println("The file was saved with the following file name:" + "SOME FILENAME");
-                
-            return true;
-                
-                
+
+        try {
+            GameControl.saveGame(game, inputs);
+        } catch (Throwable sgce) {
+            this.console.println("ERROR: Saving game: " + sgce.getMessage());
+            return false;
+        }
+
+        this.console.println("The file was saved with the following file name: " + inputs);
+
+        return true;
     }
     
 }

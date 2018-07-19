@@ -7,7 +7,6 @@ package OregonTrail.view;
 
 import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
-import java.io.PrintWriter;
 
 /**
  *
@@ -42,11 +41,50 @@ public class GameMenuView extends View {
     
     @Override
     public boolean doAction(String inputs) {
-        String filePath = this.getInputs();
-        try (PrintWriter out = new PrintWriter(filePath)) {
-            out.println(getReportString());
+        String menuItem = inputs;
+        switch (menuItem.toUpperCase()) {
+            case "V":
+                viewMap();
+                return false;
+            case "I":
+                viewInventory();
+                return false;
+            case "P":
+                purchaseSupplies();
+                return false;
+            case "L":
+                exploreLoc();
+                return false;
+            case "M":
+                move();
+                return false;
+            case "E":
+                estimateRes();
+                return false;
+            case "B":
+                repairWagon();
+                return false;
+            case "C":
+                useTools();
+                return false;
+            case "D":
+                fixSickness();
+                return false;
+            case "N":
+                navigate();
+                return false;
+            case "G":
+                huntRes();
+                return false;
+            case "S":
+                saveGame();
+                return false;
+            case "H":
+                getHelp();
+                return false;
+            default:
+                this.console.println("ERROR: Invalid selection. Please try again");
         }
-        
         return false;
     }
     
@@ -133,6 +171,8 @@ public class GameMenuView extends View {
         HelpMenuView instance = new HelpMenuView();
         instance.display();
     }
+
+ 
 }
 
 

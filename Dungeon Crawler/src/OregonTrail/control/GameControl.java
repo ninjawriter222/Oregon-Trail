@@ -59,7 +59,7 @@ public class GameControl {
     }
 
     public static void saveGame(Game game, String filePath) throws OregonTrailException{
-        if (filePath == null) {
+        if (!filePath.isEmpty()) {
             {
                 try (FileOutputStream fops = new FileOutputStream(filePath)) {
                     ObjectOutputStream output = new ObjectOutputStream(fops);
@@ -73,7 +73,7 @@ public class GameControl {
     }
 
     public static Game getGame(String filePath)throws OregonTrailException {
-        if (filePath == null) {
+        if (!filePath.isEmpty()) {
                 try (FileInputStream fips = new FileInputStream(filePath)) {
                     ObjectInputStream input = new ObjectInputStream(fips);
                     Game game = (Game) input.readObject();
