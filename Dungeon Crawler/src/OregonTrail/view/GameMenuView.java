@@ -94,10 +94,8 @@ public class GameMenuView extends View {
     }
     
     private void viewInventory() {
-        this.console.println("***Calls the viewInventory method in IV***");
-        
         InventoryView inventoryView = new InventoryView();
-        inventoryView.displayInventoryView();
+        inventoryView.display();
     }
     
     private void purchaseSupplies() {

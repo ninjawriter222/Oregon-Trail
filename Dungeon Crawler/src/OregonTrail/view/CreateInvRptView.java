@@ -5,6 +5,7 @@
  */
 package OregonTrail.view;
 
+import OregonTrail.control.GameControl;
 import static java.lang.System.out;
 
 /**
@@ -25,9 +26,23 @@ public class CreateInvRptView extends View {
 
     @Override
     public boolean doAction(String inputs) {
-        String filePath = this.getInputs();
-            out.println("\nINVENTORY REPORT");
-            out.printf("%n%-15s%-5s","Inventory Item","Qty");
+        if(inputs.isEmpty()) {
+            this.console.println("You must enter a valid file name.");
+            return false;
+        }
+        
+        try {
+            GameControl.saveGame(game, inputs);
+        } catch (Throwable sgce) {
+            this.console.println("ERROR: Saving game: " + sgce.getMessage());
+            return false;
+        }
+
+        this.console.println("The file was saved with the following file name: " + inputs);
+
+        return true;
+        out.println("\nINVENTORY REPORT");
+        out.printf("%n%-15s%-5s","Inventory Item","Qty");
         return false;
     }
 }

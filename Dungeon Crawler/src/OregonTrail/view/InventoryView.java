@@ -14,24 +14,25 @@ public class InventoryView extends View {
     public InventoryView(){
         super("This is your inventory... eventually."
             + "\n"
-            + "---------------------------------------------"
-            + "---------------------------------------------"
-            + "Press C to create a report of your inventory."
-            + "Otherwise press Q to exit this view.");
+            + "\n---------------------------------------------"
+            + "\n---------------------------------------------"
+            + "\nPress C to create a report of your inventory."
+            + "\nOtherwise press Q to exit this view.");
     }
     
     @Override
     public boolean doAction (String inputs){
         String menuItem = inputs;
         switch (menuItem.toUpperCase()) {
-            case "P":
+            case "C":
                 createInvRpt();
                 return false;
             default:
                 this.console.println("ERROR: Invalid selection. Please try again");
         }
         return false;
-        }
+    }
+    
         void displayInventoryView() {
         this.console.println("Calls displayInventoryView in IV");
     }
