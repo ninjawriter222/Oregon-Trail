@@ -12,12 +12,21 @@ package OregonTrail.view;
 public class InventoryView extends View {
     
     public InventoryView(){
-        super("This is your inventory... eventually.");
+        super("This is your inventory... eventually."
+            + "\n"
+            + "---------------------------------------------"
+            + "---------------------------------------------"
+            + "Press C to create a report of your inventory."
+            + "Otherwise press Q to exit this view.");
     }
+    
     @Override
     public boolean doAction (String inputs){
         String menuItem = inputs;
         switch (menuItem.toUpperCase()) {
+            case "P":
+                createInvRpt();
+                return false;
             default:
                 this.console.println("ERROR: Invalid selection. Please try again");
         }
@@ -26,7 +35,12 @@ public class InventoryView extends View {
         void displayInventoryView() {
         this.console.println("Calls displayInventoryView in IV");
     }
+
+    private void createInvRpt() {
+        CreateInvRptView invRptView = new CreateInvRptView();
+        invRptView.display();
     }
+}
 //    private String displayInvetory;
 //
 //    public String getDisplayInvetory() {
