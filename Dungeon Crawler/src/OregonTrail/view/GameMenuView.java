@@ -164,10 +164,10 @@ public class GameMenuView extends View {
     }
     
     private void saveGame() {
-        this.console.println("***Calls the saveGame method in SGV***");
+//        this.console.println("***Calls the saveGame method in SGV***");
         
         SaveGameView saveView = new SaveGameView();
-        saveView.displaySaveGameView();
+        saveView.display();
     }
     
     private void getHelp() {
