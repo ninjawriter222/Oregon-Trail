@@ -6,6 +6,7 @@
 package OregonTrail.view;
 
 import OregonTrail.control.GameControl;
+import java.io.PrintWriter;
 import static java.lang.System.out;
 
 /**
@@ -31,8 +32,10 @@ public class CreateInvRptView extends View {
             return false;
         }
         
-        try {
-            GameControl.saveGame(game, inputs);
+        try (PrintWriter out = new PrintWriter(inputs)) {
+            out.println("\nINVENTORY REPORT");
+            out.printf("%n%-15s%-5s","Inventory Item","Qty");
+            out.printf("%n%-15s%-5s","--------------","---");
         } catch (Throwable sgce) {
             this.console.println("ERROR: Saving game: " + sgce.getMessage());
             return false;
@@ -40,9 +43,7 @@ public class CreateInvRptView extends View {
 
         this.console.println("The file was saved with the following file name: " + inputs);
 
+        
         return true;
-        out.println("\nINVENTORY REPORT");
-        out.printf("%n%-15s%-5s","Inventory Item","Qty");
-        return false;
     }
 }
