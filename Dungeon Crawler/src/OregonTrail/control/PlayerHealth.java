@@ -59,9 +59,7 @@ public class PlayerHealth {
 //        }
     
     public static void checkSickness(){
-        System.out.println("***checkSickness called***");
-        int currentHealth = OregonTrail.getPlayer().getHealth();
-        if (currentHealth < 20)
+        if (OregonTrail.getPlayer().getHealth() <= 20)
             System.out.println("You have fallen ill.");
     }
 
