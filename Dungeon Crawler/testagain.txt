@@ -1,0 +1,5 @@
+
+INVENTORY REPORT
+
+Inventory Item Qty  Description                   
+-------------- ---  ------------------------------

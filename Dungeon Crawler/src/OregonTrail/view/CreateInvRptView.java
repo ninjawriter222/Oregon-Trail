@@ -5,7 +5,9 @@
  */
 package OregonTrail.view;
 
+import OregonTrail.OregonTrail;
 import OregonTrail.control.GameControl;
+import OregonTrail.model.Game;
 import java.io.PrintWriter;
 import static java.lang.System.out;
 
@@ -34,8 +36,13 @@ public class CreateInvRptView extends View {
         
         try (PrintWriter out = new PrintWriter(inputs)) {
             out.println("\nINVENTORY REPORT");
-            out.printf("%n%-15s%-5s","Inventory Item","Qty");
-            out.printf("%n%-15s%-5s","--------------","---");
+            out.printf("%n%-15s%-5s%-30s","Inventory Item","Qty","Description");
+            out.printf("%n%-15s%-5s%-30s","--------------","---","------------------------------");
+            
+//            Game game = OregonTrail.getCurrentGame();
+            
+            
+            
         } catch (Throwable sgce) {
             this.console.println("ERROR: Saving game: " + sgce.getMessage());
             return false;
