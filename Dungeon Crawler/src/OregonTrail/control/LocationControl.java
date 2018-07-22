@@ -55,6 +55,11 @@ public class LocationControl {
             OregonTrail.getCurrentGame().setGameOver(true);
                 return 2;
         }
+        if (OregonTrail.getPlayer().getHealth() <= 0)
+        {
+            OregonTrail.getCurrentGame().setGameOver(true);
+            return 3;
+        }
         else {
             map.getCurrentLocation().setVisited(Boolean.TRUE);
             map.setCurrentRow(row);

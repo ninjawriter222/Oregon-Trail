@@ -74,7 +74,10 @@ class MoveView extends View {
             PlayerHealth.checkSickness();
             int ret = LocationControl.changeLocation(speed);
             Player player = new Player();
-            System.out.println("Current Health = " + player.getHealth());
+            System.out.println("Current Health = " + OregonTrail.getPlayer().getHealth());
+        if (ret == 3){
+            System.out.println("You have 0 HP, you have died.");
+        }
             if (ret == 2) {
                 System.out.println("You have successfully made it to Zion.");
                 

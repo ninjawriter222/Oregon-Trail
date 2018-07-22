@@ -54,7 +54,8 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         GameControl.createNewGame(OregonTrail.getPlayer());
-            OregonTrail.getPlayer().setHealth(100);
+           Game game = new Game();
+           OregonTrail.getPlayer().setHealth(100);
         GameMenuView gameMenuView = new GameMenuView();
             gameMenuView.display();
     }
