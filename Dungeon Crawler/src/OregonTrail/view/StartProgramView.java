@@ -34,7 +34,7 @@ public class StartProgramView extends View {
             return false;
         }
         this.console.println("================================================="
-                + "\n    Hello " + inputs + " and welcome to the Oregon "
+                + "\n    Hello " + inputs + ", and welcome to the Oregon "
                 + "Trail!"
                 + "\n=================================================");
         

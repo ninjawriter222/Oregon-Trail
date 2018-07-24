@@ -12,7 +12,10 @@ package OregonTrail.view;
 public class InventoryView extends View {
     
     public InventoryView(){
-        super("This is your inventory... eventually."
+        super("+++++++++++++++++++++++++++++++++++++++++++++++++++"
+            + "\n+               Inventory Menu                    +"
+            + "\n+++++++++++++++++++++++++++++++++++++++++++++++++++"
+            + "\nThis is your inventory... eventually."
             + "\n"
             + "\n---------------------------------------------"
             + "\n---------------------------------------------"
@@ -33,7 +36,7 @@ public class InventoryView extends View {
         return false;
     }
     
-        void displayInventoryView() {
+    void displayInventoryView() {
         this.console.println("Calls displayInventoryView in IV");
     }
 

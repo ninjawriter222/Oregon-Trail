@@ -22,7 +22,7 @@ if ("accountant".equals(profession))
     {
     return 1500;
     }
-if ("lawer".equals(profession))
+if ("lawyer".equals(profession))
     {
     return 2000;
     }

@@ -99,10 +99,8 @@ public class GameMenuView extends View {
     }
     
     private void purchaseSupplies() {
-        this.console.println("***Calls the purchaseSupplies method in PSV***");
-        
         PurchaseSuppliesView purchaseView = new PurchaseSuppliesView();
-        purchaseView.displayPurchaseSuppliesView();
+        purchaseView.display();
     }
     
     private void exploreLoc() {
